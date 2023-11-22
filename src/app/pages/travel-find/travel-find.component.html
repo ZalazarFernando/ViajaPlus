@@ -1,0 +1,13 @@
+
+<section>
+    <div *ngFor="let travel of info_travels" class="card_travels">
+        <h2>{{ travel.service }}</h2>
+        <label for="card_travels">{{ travel.origin_city }}</label>
+        <label for="card_travels">{{travel.destination_city}}</label>
+        <label for="card_travels">{{travel.departure_hour}}</label>
+        <label for="card_travels">{{travel.arrival_hour}}</label>
+        <label for="card_travels">{{travel.quality}}</label>
+        <label for="card_travels">{{travel.cost}}</label>
+        <label for="card_travels">{{travel.quantity_seat}}</label>
+    </div>
+</section>

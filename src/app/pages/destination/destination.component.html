@@ -1,0 +1,10 @@
+<section>
+    <div id="principal-frame">
+        <div id='every-card-destination'>
+            <div *ngFor="let title of title_destination" class='card'>
+                <img src='{{ url_img[title_destination.indexOf(title)] }}'>
+                <h2 class='Titles_Destination_Card'>{{ title }}</h2>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,138 @@
+/* Estilo general para el contenedor */
+
+  #principal-frame{
+    display: flex;
+  }
+
+  #search-box {
+    background-color: #F5DEB3;
+    border: 2px solid #DAA520;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 170px;
+    width: 450px;
+  }
+  
+  #way-to-pay-box {
+    background-color: #F5DEB3;
+    border: 2px solid #DAA520;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Cambiado a columna para apilar las etiquetas verticalmente */
+    align-items: center; /* Centra las etiquetas horizontalmente */
+    margin-top: 10px;
+    width: 450px;
+  }
+  
+  #way-to-pay-box h2 {
+    margin-bottom: 15px; /* Espacio entre el título y las etiquetas */
+  }
+  
+  #way-to-pay-box label {
+    background-color: #FFD700;
+    color: #000000;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px; /* Espacio entre las etiquetas */
+    cursor: pointer;
+  }
+  
+  #way-to-pay-box label:hover {
+    background-color: #8B4513; /* Cambio de color al pasar el ratón */
+    color: #ffffff;
+  }
+  
+  /* Estilo para los bloques de inputs */
+  #text-input-box,
+  #others-input-box {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+  }
+  
+  /* Estilo para las labels */
+  label {
+    margin-bottom: 5px;
+  }
+  
+  /* Estilo para los inputs de texto */
+  input[type="text"],
+  input[type="date"],
+  select {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #DAA520;
+    border-radius: 5px;
+  }
+  
+  /* Estilo para el select */
+  select {
+    appearance: none;
+    background-color: #FFD700;
+    cursor: pointer;
+  }
+  
+  /* Estilo para los input radio */
+  input[type="radio"] {
+    margin-right: 5px;
+  }
+  
+  /* Estilo para el botón */
+  #search_date_travel_btn {
+    background-color: #FFD700;
+    color: #000000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: flex-end;
+  }
+
+  #search_date_travel_btn:hover {
+    background-color: #8B4513; /* Cambio de color al pasar el ratón */
+    color: #ffffff;
+  }
+  
+  /* Ocultar componente app-travel-find */
+  app-travel-find {
+    display: none;
+  }
+  #destination-box {
+    text-align: center;
+  }
+  
+  #every-card {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 115px;
+  }
+  
+  .card {
+    background-color: #F5DEB3; /* Color ocre */
+    border: 1px solid #DAA520; /* Color dorado */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+  }
+  
+  .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0; /* Bordes redondeados solo arriba */
+  }
+  
+  .Titles_Destination_Card {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #000; /* Color negro */
+  }
+  

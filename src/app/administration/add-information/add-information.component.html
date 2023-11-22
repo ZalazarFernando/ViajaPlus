@@ -1,0 +1,49 @@
+<section>
+    <div id="add-city" class="add-info-box">
+        <label for="add-info-box">Nombre de ciudad</label>
+        <input type="text" name="city-name">
+        <button id="add-city-btn" class="add_btn">Añadir</button>
+    </div>
+
+    <div id="add-section" class="add-info-box">
+        <label for="add-info-box">Nombre primera ciudad</label>
+        <select>
+            <option *ngFor="let name_city of city_info" value="{{name_city.name}}">{{name_city.name}}</option>
+        </select>
+        <label for="add-info-box">Nombre segunda ciudad</label>
+        <select>
+            <option *ngFor="let name_city of city_info" value="{{name_city.name}}">{{name_city.name}}</option>
+        </select>
+        <button id="add-section-btn" class="add_btn">Añadir</button>
+    </div>
+
+    <div id="add-itinerary" class="add-info-box">
+        <label for="add-info-box">Elija el tramo</label>
+        <select>
+            <option *ngFor="let section of section_info" value="{{section.id}}">{{section.city_one+" "+section.city_two}}</option>
+        </select>
+        <button id="add-itinerary-btn" class="add_btn">Añadir</button>
+    </div>
+
+    <div id="add-service" class="add-info-box">
+        <label for="add-info-box">Elija el tramo</label>
+        <select *ngFor="let itinerary of itinerary_info">
+            <option value="{{itinerary.id}}">{{itinerary.id}}</option>
+        </select>
+        <button id="add-service-btn" class="add_btn">Añadir</button>
+    </div>
+
+    <div id="add-bus" class="add-info-box">
+        <label for="add-info-box">Número de unidad</label>
+        <input type="text" name="num_unity">
+        <label for="add-info-box">Pisos</label>
+        <input type="text" name="quantity_floor">
+        <label for="add-info-box">Categoria</label>
+        <select>
+            <option value="semibed">semicama</option>
+            <option value="bed">cama</option>
+            <option value="full bed">cama total</option>
+        </select>
+        <button id="add-bus-btn" class="add_btn">Añadir</button>
+    </div>
+</section>

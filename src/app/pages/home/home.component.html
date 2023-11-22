@@ -1,0 +1,55 @@
+<section class="ViajaPlus">
+    <div id="principal-frame">
+      <div id="first-block">
+        <div id="search-box">
+          <div id="text-input-box">
+            <label>Origen</label>
+            <input type="text" name="origin" [value]="origin">
+            <label>Destino</label>
+            <input type="text" name="destination" [value]="destination">
+            <div id="radio-btn">
+              <input type="radio" name="round-trip" value="op1">
+              <label for="op1">ida</label>
+              <input type="radio" name="round-trip" value="op2">
+              <label for="op2">ida y vuelta</label>
+            </div>
+          </div>
+          <div id="others-input-box">
+            <label>Fecha de partida</label>
+            <input type="date" name="date_leaving" [value]="departureDate">
+            <label>Fecha de regreso</label>
+            <input type="date" name="date_back" [value]="backDate">
+            <label>Cantidad de pasajeros</label>
+            <select [value]="passengers">
+              <option value="1Passenger">1</option>
+              <option value="2Passenger">2</option>
+              <option value="3Passenger">3</option>
+              <option value="4Passenger">4</option>
+              <option value="5Passenger">5</option>
+              <option value="6Passenger">6</option>
+            </select>
+          </div>
+          <button id="search_date_travel_btn" class="search_btn" (click)="SearchTravel()">Buscar</button>
+          <app-travel-find [messageGet]="messageToSend"></app-travel-find>
+        </div>
+  
+        <div id="way-to-pay-box">
+          <h2>Formas de pago</h2>
+          <label>VISA</label> 
+          <label>MASTERCARD</label>
+        </div>
+      </div>
+  
+      <div id="destination-box">
+        <h2>Destinos</h2>
+        <!--Aquí han de ir las tarjetas con fotos de los lugares turísticos-->
+  
+        <div id='every-card'>
+              <div *ngFor="let title of title_destination" class='card'>
+                  <img src='{{ url_img[title_destination.indexOf(title)] }}'>
+                  <h2 class='Titles_Destination_Card'>{{ title }}</h2>
+              </div>
+        </div>
+      </div>
+    </div>
+</section>
