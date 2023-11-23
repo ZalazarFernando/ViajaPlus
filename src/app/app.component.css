@@ -1,0 +1,42 @@
+#principal-bar {
+    background-color: #F5DEB3; /* Color de fondo */
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra leve por debajo */
+    padding: 10px;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Para estar siempre encima de otros componentes */
+  }
+  
+  #principal-bar h1 {
+    margin: 0;
+  }
+  
+  #principal-bar h2 {
+    margin: 5px 0 15px; /* Espaciado entre el h1 y el h2 */
+  }
+  
+  #principal-bar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #principal-bar nav ul li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  #principal-bar nav ul li a {
+    text-decoration: none;
+    color: #000; /* Color por defecto de los enlaces */
+    font-weight: bold;
+  }
+  
+  #principal-bar nav ul li a:hover {
+    color: #8B4513; /* Cambio de color al pasar el ratón */
+  }
+  
