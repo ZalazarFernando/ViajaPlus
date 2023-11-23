@@ -1,0 +1,29 @@
+  #principal {
+    margin-top: 200px;
+    display: flex;
+    justify-content: space-around; /* Puedes ajustar esto según tus necesidades */
+  }
+  
+  .floor-box {
+    display: flex;
+  }
+  
+  .long-column {
+    display: flex;
+  }
+  
+  .column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .short-column {
+    display: flex;
+  }
+  
+  .image-chair {
+    height: 30px;
+    width: 30px;
+    margin: 5px; /* Ajusta el margen según sea necesario */
+    box-sizing: border-box; /* Incluye el margen en el tamaño total del elemento */
+  }

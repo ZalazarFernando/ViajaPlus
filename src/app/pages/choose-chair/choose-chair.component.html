@@ -1,1 +1,58 @@
-<p>choose-chair works!</p>
+<section>
+    <div id="principal">
+        <div id="floor-two" class="floor-box" >
+            <div id="two-long-columns-floor-two" class="long-column">
+                <div id="first-column-floor-two" class="column">
+                    <ng-container *ngFor="let n of auxNumThirteen; let i = index">
+                        <img src="assets/image/circle-yellow.png" alt="chair" class="image-chair">
+                    </ng-container>
+                </div>
+                <div id="second-column-floor-two" class="column">
+                    <ng-container *ngFor="let n of auxNumThirteen; let i = index">
+                        <img src="assets/image/circle-yellow.png" alt="chair" class="image-chair">
+                    </ng-container>
+                </div>
+            </div>
+
+            <div id="hall-column" class="long-column">
+                <h3>Pasillo</h3>
+            </div>
+
+            <div id="shorts-columns-floor-two">
+                <div id="front-chair-floor-two" class="short-column">
+                    <div id="first-column-front-chair-floor-two" class="column">
+                        <ng-container *ngFor="let n of auxNumOne; let i = index">
+                            <img src="assets/image/circle-yellow.png" alt="chair" class="image-chair">
+                        </ng-container>
+                    </div>
+                    <div id="second-column-front-chair-floor-two" class="column">
+                        <ng-container *ngFor="let n of auxNumOne; let i = index">
+                            <img src="assets/image/circle-yellow.png" alt="chair" class="image-chair">
+                        </ng-container>
+                    </div>
+                </div>
+
+                <div id="stairs-column" class="short-column">
+                    <h3>Escaleras</h3>
+                </div>
+                
+
+                <div id="front-chair-floor-two" class="short-column">
+                    <div id="first-column-front-chair-floor-two" class="column">
+                        <ng-container *ngFor="let n of auxNumTen; let i = index">
+                            <img src="assets/image/circle-yellow.png" alt="chair" class="image-chair">
+                        </ng-container>
+                    </div>
+                    <div id="second-column-front-chair-floor-two" class="column">
+                        <ng-container *ngFor="let n of auxNumTen; let i = index">
+                            <img src="assets/image/circle-yellow.png" alt="chair" class="image-chair">
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+            
+
+            
+        </div>
+    </div>
+</section>
