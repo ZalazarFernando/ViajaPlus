@@ -1,13 +1,36 @@
-
 <section>
-    <div *ngFor="let travel of info_travels" class="card_travels">
+    <div *ngFor="let travel of info_travels" class="card-travels">
         <h2>{{ travel.service }}</h2>
-        <label for="card_travels">{{ travel.origin_city }}</label>
-        <label for="card_travels">{{travel.destination_city}}</label>
-        <label for="card_travels">{{travel.departure_hour}}</label>
-        <label for="card_travels">{{travel.arrival_hour}}</label>
-        <label for="card_travels">{{travel.quality}}</label>
-        <label for="card_travels">{{travel.cost}}</label>
-        <label for="card_travels">{{travel.quantity_seat}}</label>
+        <div class="info-label">
+            <div class="column-info">
+                <h3>Ciudad de origen</h3>
+                <label for="card_travels">{{ travel.origin_city }}</label>
+            </div>
+            <div class="column-info">
+                <h3>Ciudad de destino</h3>
+                <label for="card_travels">{{travel.destination_city}}</label>
+            </div>
+            <div class="column-info">
+                <h3>Hora de salida</h3>
+                <label for="card_travels">{{travel.departure_hour}}</label>
+            </div>
+            <div class="column-info">
+                <h3>Hora de llegada</h3>
+                <label for="card_travels">{{travel.arrival_hour}}</label>
+            </div>
+            <div class="column-info">
+                <h3>Calidad</h3>
+                <label for="card_travels">{{travel.quality}}</label>
+            </div>
+            <div class="column-info">
+                <h3>Precio</h3>
+                <label for="card_travels">{{travel.cost}}</label>
+            </div>
+            <div class="column-info">
+                <h3>Asientos disponibles</h3>
+                <label for="card_travels">{{travel.quantity_seat}}</label>
+            </div>
+        </div>
+        <button class="done-btn" (click)="redirectChair()">ver</button>
     </div>
 </section>

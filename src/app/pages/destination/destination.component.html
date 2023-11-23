@@ -3,7 +3,10 @@
         <div id='every-card-destination'>
             <div *ngFor="let title of title_destination" class='card'>
                 <img src='{{ url_img[title_destination.indexOf(title)] }}'>
-                <h2 class='Titles_Destination_Card'>{{ title }}</h2>
+                <div class="text-info-destination">
+                    <h2 class='Titles_Destination_Card'>{{ title }}</h2>
+                    <p>{{ description_destination.at(title_destination.indexOf(title)) }}</p>
+                </div>
             </div>
         </div>
     </div>

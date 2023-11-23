@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-travel-find',
@@ -11,9 +12,13 @@ import { CommonModule } from '@angular/common';
 export class TravelFindComponent {
   @Input() messageGet: any="";
 
+  redirectChair(){
+    //redirecciona a choose-chair
+  }
+
   info_travels: any[] = [
     { 
-      service : 'test 1',
+      service : 'FlechaBus',
       origin_city : 'city 1',
       destination_city : 'city 2',
       departure_hour : 'hour 1',
@@ -23,7 +28,7 @@ export class TravelFindComponent {
       quantity_seat : '6'
     },
     {
-      service : 'test 2',
+      service : 'Ersa',
       origin_city : 'city 1',
       destination_city : 'city 2',
       departure_hour : 'hour 1',
@@ -33,7 +38,7 @@ export class TravelFindComponent {
       quantity_seat : '4'
     },
     {
-      service : 'test 3',
+      service : 'El Pulqui',
       origin_city : 'city 1',
       destination_city : 'city 2',
       departure_hour : 'hour 1',

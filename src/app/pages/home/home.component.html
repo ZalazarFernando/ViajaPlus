@@ -45,10 +45,12 @@
         <!--Aquí han de ir las tarjetas con fotos de los lugares turísticos-->
   
         <div id='every-card'>
-              <div *ngFor="let title of title_destination" class='card'>
-                  <img src='{{ url_img[title_destination.indexOf(title)] }}'>
-                  <h2 class='Titles_Destination_Card'>{{ title }}</h2>
-              </div>
+          <div *ngFor="let title of title_destination" class='card'>
+            <a href="destination" class="reference-destintion">
+              <img src='{{ url_img[title_destination.indexOf(title)] }}'>
+              <h2 class='Titles_Destination_Card'>{{ title }}</h2>
+            </a>
+          </div>
         </div>
       </div>
     </div>

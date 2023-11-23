@@ -69,13 +69,6 @@
     border-radius: 5px;
   }
   
-  /* Estilo para el select */
-  select {
-    appearance: none;
-    background-color: #FFD700;
-    cursor: pointer;
-  }
-  
   /* Estilo para los input radio */
   input[type="radio"] {
     margin-right: 5px;
@@ -145,4 +138,3 @@
     font-size: 16px;
     color: #000; /* Color negro */
   }
-  

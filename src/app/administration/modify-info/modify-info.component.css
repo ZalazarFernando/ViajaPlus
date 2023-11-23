@@ -1,0 +1,57 @@
+  #principal{
+    margin-top: 150px;
+  }
+
+  .add-info-box{
+    background-color: #F5DEB3;
+    border: 2px solid #DAA520;
+    border-radius: 10px;
+    display: flex;
+    margin-bottom: 20px;
+  }
+
+  #add-city{
+    padding: 10px;
+    justify-content: space-between;
+    width: 400px;
+  }
+
+  #add-section{
+    padding: 10px;
+    justify-content: space-between;
+    width: 650px;
+  }
+
+  #add-itinerary{
+    padding: 10px;
+    justify-content: space-between;
+    width: 350px;
+  }
+
+  #add-service{
+    padding: 10px;
+    justify-content: space-between;
+    width: 250px;
+  }
+
+  #add-bus{
+    padding: 10px;
+    justify-content: space-between;
+    width: 800px;
+  }
+
+  .add-btn{
+    background-color: #FFD700;
+    color: #000000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: flex-end;
+  }
+
+  .add-btn:hover{
+    background-color: #8B4513; /* Cambio de color al pasar el ratón */
+    color: #ffffff;
+  }
+  

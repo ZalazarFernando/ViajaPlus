@@ -1,0 +1,27 @@
+  #principal{
+    margin-top: 150px;
+    border: 2px solid #DAA520;
+    border-radius: 10px;
+    width: 100%;
+  }
+
+  #principal .info-contact{
+    margin-left: 2%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #principal .info-contact label{
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  h2{
+    background-color: #DAA520;
+    border-radius: 10px;
+    text-align: center;
+    width: 98%;
+  }
+
+ 

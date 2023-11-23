@@ -7,6 +7,11 @@
   .floor-box {
     display: flex;
   }
+
+  .hall-column{
+    margin-right: 20px;
+    margin-left: 20px;
+  }
   
   .long-column {
     display: flex;
@@ -19,6 +24,21 @@
 
   .short-column {
     display: flex;
+  }
+
+  #info-travel{
+    display: flex;
+    align-items: center;
+  }
+
+  .show-chair{
+    margin-right: 20px;
+  }
+  
+  #show-types-chair {
+    display: flex;
+    align-items: center;
+    margin-right: 10px; /* Espacio entre cada conjunto de imagen y h3 */
   }
   
   .image-chair {
