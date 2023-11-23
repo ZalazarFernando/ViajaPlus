@@ -12,4 +12,5 @@ export class ChooseChairComponent {
   auxNumThirteen = Array(13).fill(0);
   auxNumOne = Array(1).fill(0);
   auxNumTen = Array(10).fill(0);
+  auxNumFour = Array(4).fill(0);
 }

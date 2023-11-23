@@ -35,7 +35,6 @@
                 <div id="stairs-column" class="short-column">
                     <h3>Escaleras</h3>
                 </div>
-                
 
                 <div id="front-chair-floor-two" class="short-column">
                     <div id="first-column-front-chair-floor-two" class="column">
@@ -50,9 +49,44 @@
                     </div>
                 </div>
             </div>
-            
-
-            
         </div>
+
+        <div id="floor-one" class="floor-box" >
+            <div id="right-part">
+                <div id="stairs-column" class="short-column">
+                    <h3>Chofer</h3>
+                </div>
+                <div id="two-left-columns-floor-one" class="short-column">
+                    <div id="first-column-floor-one" class="column">
+                        <ng-container *ngFor="let n of auxNumFour; let i = index">
+                            <img src="assets/image/circle-yellow.png" alt="chair" class="image-chair">
+                        </ng-container>
+                    </div>
+                    <div id="second-column-floor-one" class="column">
+                        <ng-container *ngFor="let n of auxNumFour; let i = index">
+                            <img src="assets/image/circle-yellow.png" alt="chair" class="image-chair">
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+
+            <div id="hall-column" class="long-column">
+                <h3>Pasillo</h3>
+            </div>
+
+            <div id="shorts-columns-floor-two">
+                <div id="stairs-column" class="short-column">
+                    <h3>Puerta</h3>
+                </div>
+                <div id="front-chair-floor-two" class="short-column">
+                    <div id="first-column-front-chair-floor-two" class="column">
+                        <ng-container *ngFor="let n of auxNumFour; let i = index">
+                            <img src="assets/image/circle-yellow.png" alt="chair" class="image-chair">
+                        </ng-container>
+                    </div>
+                </div>
+            </div> 
+        </div>
+
     </div>
 </section>
