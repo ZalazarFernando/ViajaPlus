@@ -4,23 +4,23 @@
         <div id="search-box">
           <div id="text-input-box">
             <label>Origen</label>
-            <input type="text" name="origin" [value]="origin">
+            <input type="text" name="origin" [(ngModel)]="origin">
             <label>Destino</label>
-            <input type="text" name="destination" [value]="destination">
+            <input type="text" name="destination" [(ngModel)]="destination">
             <div id="radio-btn">
-              <input type="radio" name="round-trip" value="op1">
-              <label for="op1">ida</label>
-              <input type="radio" name="round-trip" value="op2">
-              <label for="op2">ida y vuelta</label>
+              <input type="radio" name="round-trip" [(ngModel)]="radioOp1" (change)="handleRadioChange('op1')" [checked]="dateBackDisabled">
+              <label>ida</label>
+              <input type="radio" name="round-trip" [(ngModel)]="radioOp2" (change)="handleRadioChange('op2')" [checked]="!dateBackDisabled">
+              <label>ida y vuelta</label>
             </div>
           </div>
           <div id="others-input-box">
             <label>Fecha de partida</label>
-            <input type="date" name="date_leaving" [value]="departureDate">
+            <input type="date" name="date_leaving" [(ngModel)]="departureDate">
             <label>Fecha de regreso</label>
-            <input type="date" name="date_back" [value]="backDate">
+            <input type="date" name="date_back" [(ngModel)]="backDate" [disabled]="dateBackDisabled">
             <label>Cantidad de pasajeros</label>
-            <select [value]="passengers">
+            <select [(ngModel)]="passengers">
               <option value="1Passenger">1</option>
               <option value="2Passenger">2</option>
               <option value="3Passenger">3</option>

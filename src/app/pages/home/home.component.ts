@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { CiudadService } from '../../services/ciudad.service';
 import { TravelFindComponent } from '../travel-find/travel-find.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
+    FormsModule,
     CommonModule, 
     TravelFindComponent
   ],
@@ -18,15 +20,18 @@ import { TravelFindComponent } from '../travel-find/travel-find.component';
 export class HomeComponent {
   public origin: string="";
   public destination: string="";
-  public departureDate: any="";
-  public backDate: any="";
+  public departureDate: Date | null = null;
+  public backDate: Date | null = null;
   public passengers: string="";
+  public radioOp1: string="";
+  public radioOp2: string="";
 
-  public messageToSend: any="";
+  public messageToSend: any[] = [];
 
   constructor(
     private router: Router
-    //private cityService: CiudadService
+    //private cityService: CiudadService,
+    //private itineraryService: ItinerarioService
     ) { }
 
   /*ngOnInit(){
@@ -37,7 +42,21 @@ export class HomeComponent {
     this.cityService.getCiudades(this.destination).subscribe((value)=>{
       this.destination = value;
     });
+
+    this.itineraryService.getItinerario(this.origin, this.destination, this.departureDate.getTime()).subscribe((value)=>{
+
+    })
   }*/
+
+  dateBackDisabled: boolean = true;
+
+  handleRadioChange(option: string) {
+    if (option === 'op2') {
+      this.dateBackDisabled = false; // Habilitar el input date "date_back"
+    } else {
+      this.dateBackDisabled = true; // Deshabilitar el input date "date_back"
+    }
+  }
 
   //Intento para obtener información de la bd
   SearchTravel() {
@@ -47,11 +66,70 @@ export class HomeComponent {
     const arrivalDate = (document.querySelector('input[name="hour_arrival"]') as HTMLInputElement).value;
     const passengers = (document.querySelector('select') as HTMLSelectElement).value;
     const roundTrip = (document.querySelector('input[name="round-trip"]:checked') as HTMLInputElement).value;*/
-    this.messageToSend = this.origin + this.destination + this.departureDate + this.backDate + this.passengers;
-    this.router.navigate(['./travel-find']);
+    
+    if (this.origin && this.destination && this.departureDate && this.passengers) {
+      this.messageToSend.push(this.origin);
+      this.messageToSend.push(this.destination);
+      this.messageToSend.push(this.departureDate);
+      this.messageToSend.push(this.backDate);
+      this.messageToSend.push(this.passengers);
+      this.messageToSend.push(this.radioOp1);
+      this.messageToSend.push(this.radioOp2);
+
+      this.router.navigate(['./travel-find']);
+    }
   }
 
-  //variables
+  //setter y getters
+  get getOrigin(): string {
+    return this.origin;
+  }
+  
+  set setOrigin(value: string) {
+    this.origin = value;
+  }
+
+  get getDestination(): string {
+    return this.destination;
+  }
+  
+  set setDestination(value: string) {
+    this.destination = value;
+  }
+
+  get getRadioOp1(): string {
+    return this.radioOp1;
+  }
+  
+  set setRadioOp2(value: string) {
+    this.radioOp2 = value;
+  }
+
+  get getDepartureDate(): Date | null{
+    return this.departureDate;
+  }
+  
+  set setDepartureDate(value: Date) {
+    this.departureDate = value;
+  }
+
+  get getBackDate(): Date | null{
+    return this.backDate;
+  }
+  
+  set setBackDate(value: Date) {
+    this.backDate = value;
+  }
+
+  get getPassengers(): string{
+    return this.passengers;
+  }
+  
+  set setPassengers(value: string) {
+    this.passengers = value;
+  }
+
+  //hardcodeo
   title_destination : string[] = [
     'Brasil',
     'Argentina',
