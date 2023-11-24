@@ -1,19 +1,24 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { ChooseChairComponent } from '../choose-chair/choose-chair.component';
 
 @Component({
   selector: 'app-travel-find',
   standalone: true,
-  imports: [CommonModule],
+  imports: [
+    ChooseChairComponent,
+    CommonModule],
   templateUrl: './travel-find.component.html',
   styleUrl: './travel-find.component.css'
 })
 export class TravelFindComponent {
   @Input() messageGet: any="";
+  constructor(private router: Router){}
 
   redirectChair(){
-    //redirecciona a choose-chair
+    this.router.navigate(['./choose-chair']);
   }
 
   info_travels: any[] = [
