@@ -1,0 +1,61 @@
+    section{
+        margin-top: 130px;
+        display: flex;
+    }
+
+    #info-container{
+        border: 2px solid #DAA520;
+        border-radius: 10px;
+        width: 30%;
+        height: 550px;
+        justify-content: center;
+        background-color: #F5DEB3;
+    }
+
+    #available-itineraries{
+        margin-top: 35px;
+        display: flex;
+    }
+
+    #select-itinerary{
+        height: 20px;
+    }
+
+    #text-itineraries{
+        margin-top: -2px;
+    }
+
+    .info-input{
+        border: #DAA520;
+        margin-left: 20px;
+        border-radius: 5px;
+    }
+
+    #frame-add-midway-city{
+        background-color: #F5DEB3;
+        border: 2px solid #DAA520;
+        border-radius: 10px;
+        width: 25%;
+        height: 120px;
+        margin-left: 20px;
+    }
+
+    #container-btn-frame-add-midway{
+        margin-top: 10px;
+    }
+
+    .button-modify-info{
+        background-color: #FFD700;
+        color: #000000;
+        border: none;
+        padding: 5px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        align-self: flex-end;
+        margin-left: 10px;
+    }
+
+    .button-modify-info:hover {
+        background-color: #8B4513; /* Cambio de color al pasar el ratón */
+        color: #ffffff;
+    }

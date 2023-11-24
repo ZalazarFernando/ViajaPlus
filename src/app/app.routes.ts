@@ -5,8 +5,7 @@ import { ChooseChairComponent } from './pages/choose-chair/choose-chair.componen
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { DestinationComponent } from './pages/destination/destination.component';
 import { TravelFindComponent } from './pages/travel-find/travel-find.component';
-import { ModifyInfoComponent } from './administration/modify-info/modify-info.component';
-import { AddInformationComponent } from './administration/add-information/add-information.component';
+import { ItineraryMaintenanceComponent } from './administratio/itinerary-maintenance/itinerary-maintenance.component';
 
 export const routes: Routes = [
     {
@@ -34,11 +33,7 @@ export const routes: Routes = [
         component: TravelFindComponent
     },
     {
-        path: 'modify-info',
-        component: ModifyInfoComponent
-    },
-    {
-        path: 'add-info',
-        component: AddInformationComponent
+        path: 'itinerary-maintenance',
+        component: ItineraryMaintenanceComponent
     }
 ];

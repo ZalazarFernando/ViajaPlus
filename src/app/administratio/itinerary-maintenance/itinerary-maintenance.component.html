@@ -1,0 +1,101 @@
+<section>
+    <div id="info-container">
+
+        <div id="available-itineraries">
+            <select id="select-itinerary" [(ngModel)]="itinerary_select" class="info-input">
+                <option value="example" 
+                *ngFor="let itinerary of itineraries;">{{itinerary}}</option>
+            </select>
+            <h3 id="text-itineraries" class="info-input">Itinerarios</h3>
+        </div>
+        <div id="container-btn-itinerary">
+            <button id="btn-delete-itinerary" class="button-modify-info">Borrar</button>
+            <button id="btn-new-itinerary" class="button-modify-info">Nuevo</button>
+        </div>
+
+        <h3 class="info-input">Horario de partida</h3>
+        <input 
+            type="time" 
+            name="departure-time" 
+            id="departure-time" 
+            class="info-input"
+            [(ngModel)]="departureTime"
+            (change)="onDepartureTimeChange()">
+            <button 
+                id="btn-save-departure-time" 
+                class="button-modify-info"
+                [disabled]="!isModified"
+                (click)="onSave(false)">Guardar</button>
+
+        <h3 class="info-input">Horario de llegada</h3>
+        <input 
+            type="time" 
+            name="arrival-time" 
+            id="arrival-time" 
+            class="info-input"
+            [(ngModel)]="arrivalTime"
+            (change)="onDepartureTimeChange()">
+            <button 
+                id="btn-save-arrival-time" 
+                class="button-modify-info"
+                [disabled]="!isModified"
+                (click)="onSave(false)">Guardar</button>
+
+        <h3 class="info-input">Ciudad de origen</h3>
+        <input 
+            type="text" 
+            name="departure-city" 
+            id="departure-city" 
+            class="info-input"
+            [(ngModel)]="departureCity"
+            (change)="onDepartureTimeChange()">
+            <button 
+                id="btn-save-departure-city" 
+                class="button-modify-info"
+                [disabled]="!isModified"
+                (click)="onSave(false)">Guardar</button>
+
+        <h3 class="info-input">Ciudad de destino</h3>
+        <input 
+            type="text" 
+            name="arrival-city" 
+            id="arrival-city" 
+            class="info-input"
+            [(ngModel)]="arrivalCity"
+            (change)="onDepartureTimeChange()">
+            <button 
+                id="btn-save-arrival-city" 
+                class="button-modify-info"
+                [disabled]="!isModified"
+                (click)="onSave(false)">Guardar</button>
+
+        <h3 id="text-midway" class="info-input">Ciudades intermedias</h3>
+        <select id="select-midway" class="info-input">
+            <option [(ngModel)]="midwayCities[i]" 
+            *ngFor="let mc of midwayCities;let i = index">{{mc}}</option>
+        </select>
+    </div>
+
+    <div id="frame-add-midway-city">
+        <h3 class="info-input">Ciudad intermedia</h3>
+        <input 
+            type="text" 
+            name="midway-city" 
+            id="midway-city" 
+            class="info-input"
+            [(ngModel)]="midwayCity"
+            (change)="onDepartureTimeChange()">
+        <div id="container-btn-frame-add-midway">
+            <button 
+                id="btn-save-arrival-city" 
+                class="button-modify-info"
+                [disabled]="!isModified"
+                (click)="onSave(true)">Guardar</button>
+            <button 
+                id="btn-save-arrival-city" 
+                class="button-modify-info"
+                [disabled]="!isModified"
+                (click)="onDelete(1)">Borrar</button>
+        </div>
+    </div>
+</section>
