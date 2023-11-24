@@ -12,35 +12,48 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './itinerary-maintenance.component.css'
 })
 export class ItineraryMaintenanceComponent {
-  itineraries: any[] = ['example1', 'example2', 'example3'];
+  itineraries: any[] = [];
   midwayCities: any[]  = [];
-
-  itinerary_select: string="";
+  
   departureTime: Time | null = null;
   arrivalTime: Time | null = null;
   departureCity: string="";
   arrivalCity: string="";
+
+  itinerarySelected: string="";
   midwayCity: string="";
+  newItinerary: string="";
   
   isModified: boolean = false; //tiene que ser un array de booleans
+  showAddItinerary: boolean = false;
 
-  onDepartureTimeChange() {
+  onChange() {
     this.isModified = true;
   }
 
-  onSave(verify: boolean) {
-    this.isModified = false; // Reseteamos la bandera ya que se ha guardado
-    if(verify){
+  onSave(value: number) {
+    if(value === 0){
+      this.isModified = false; // Reseteamos la bandera ya que se ha guardado
+    }
+    else if(value === 1){
       if(this.midwayCities.findIndex(ciudad => ciudad === this.midwayCity) === -1){
         this.midwayCities.push(this.midwayCity);
         this.midwayCity = "";
       }
     }
+    else if(value === 2){
+      this.itineraries.push(this.newItinerary);
+      this.newItinerary = "";
+    }
   }
 
   onDelete(value: number){
     if(value === 0){
-
+      if(this.itineraries.findIndex(ciudad => ciudad === this.itinerarySelected) !== -1){
+        this.itineraries.splice(this.itineraries.findIndex(ciudad => ciudad === this.itinerarySelected),1);
+        this.isModified = false;
+        console.log(this.itineraries); 
+      }
     }
     else if(value === 1){
       if(this.midwayCities.findIndex(ciudad => ciudad === this.midwayCity) !== -1){
@@ -51,13 +64,28 @@ export class ItineraryMaintenanceComponent {
     }
   }
 
+  onNewItinerary(){
+    this.showAddItinerary = true;
+  }
+  onCancelnewItinerary(){
+    this.showAddItinerary = false;
+  }
+
   //getters y setters
   get getItinerarySelect(){
-      return this.itinerary_select;
+      return this.itinerarySelected;
   }
 
   set setItinerarySelect(value: string){
-    this.itinerary_select = value;
+    this.itinerarySelected = value;
+  }
+
+  get getNewItinerary(){
+    return this.newItinerary;
+  }
+
+  set setNewItinerary(value: string){
+    this.newItinerary = value;
   }
 
   get getDepartureTime(){
