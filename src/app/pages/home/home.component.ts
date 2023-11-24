@@ -10,8 +10,7 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [
     FormsModule,
-    CommonModule, 
-    TravelFindComponent
+    CommonModule
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
