@@ -1,0 +1,108 @@
+<section>
+    <div id="principal" class="info-box">
+        <div id="group-one" class="group-info">
+            <div id="unit-numeber" class="info-div">
+                <h3>Número de unidad</h3>
+                <select id="select-unit-number">
+                    <option value="{{number}}"    
+                        *ngFor="let number of numbersUnit;let i = index">{{number}}</option>
+                </select>
+                <div id="btn-of-unit" class="btn-modify">
+                    <button id="btn-new-unit">Nueva</button>
+                    <button id="btn-delete-unit">Borrar</button>
+                </div>
+            </div>
+    
+            <div id="type-service" class="info-div">
+                <h3>Tipo de atención</h3>
+                <input 
+                    type="text" 
+                    class="info-input"
+                    [(ngModel)]="typeService">
+                <div id="btn-of-type-service" class="btn-modify">
+                    <button class="btn-save">Guardar</button>
+                </div>
+            </div>
+    
+            <div id="category" class="info-div">
+                <h3>Categoría</h3>
+                <input 
+                    type="text" 
+                    class="info-input"
+                    [(ngModel)]="category">
+                <div id="btn-of-category" class="btn-modify">
+                    <button class="btn-save">Guardar</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="group-two" class="group-info">
+            <div id="floor-count" class="info-div">
+                <h3>Pisos</h3>
+                <input 
+                    type="text" 
+                    class="info-input"
+                    [(ngModel)]="countFloor">
+                <div id="btn-of-floor-count" class="btn-modify">
+                    <button 
+                        class="btn-save">Guardar</button>
+                </div>
+            </div>
+    
+            <div id="condition" class="info-div">
+                <h3>Situación</h3>
+                <input 
+                    type="text" 
+                    class="info-input"
+                    [(ngModel)]="condition">
+                <div id="btn-of-condition" class="btn-modify">
+                    <button class="btn-save">Guardar</button>
+                </div>
+            </div>
+    
+            <div id="Cost" class="info-div">
+                <h3>Costo</h3>
+                <input type="text" class="info-input">
+                <div 
+                    id="btn-of-cost" 
+                    class="btn-modify"
+                    [(ngModel)]="cost">
+                    <button class="btn-save">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="gruop-count-chairs">
+        <div id="floor-one-chairs" class="info-box">
+            <div class="info-chairs">
+                <h3>Cantidad sillas primer piso</h3>
+                <input type="text" [(ngModel)]="floorOneNumberChairs">
+                <div id="btn-of-unit" class="btn-modify">
+                    <button id="btn-save-count-chair">Guardar</button>
+                </div>
+            </div>
+        </div>
+    
+        <div id="floor-two-chairs" class="info-box" *ngIf="showSecondFloorChairs">
+            <div class="info-chairs">
+                <h3>Cantidad sillas segundo piso</h3>
+                <input type="text" [(ngModel)]="floorSecondNumberChairs">
+                <div id="btn-of-unit" class="btn-modify">
+                    <button id="btn-save-count-chair">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="new-number-unit" class="info-box" *ngIf="showNewNumberUnit">
+        <div class="info-chairs">
+            <h3>Nuevo número de unidad</h3>
+            <input type="text" [(ngModel)]="newNumberUnity">
+            <div id="btn-of-unit" class="btn-modify">
+                <button id="btn-save-count-chair">Guardar</button>
+                <button id="btn-cancel-unit">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</section>

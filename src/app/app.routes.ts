@@ -7,6 +7,7 @@ import { DestinationComponent } from './pages/destination/destination.component'
 import { TravelFindComponent } from './pages/travel-find/travel-find.component';
 import { ItineraryMaintenanceComponent } from './administratio/itinerary-maintenance/itinerary-maintenance.component';
 import { TicketSalesComponent } from './administratio/ticket-sales/ticket-sales.component';
+import { BusesComponent } from './administratio/buses/buses.component';
 
 export const routes: Routes = [
     {
@@ -40,5 +41,9 @@ export const routes: Routes = [
     {
         path: 'administration/ticket-sales',
         component: TicketSalesComponent
+    },
+    {
+        path: 'administration/buses',
+        component: BusesComponent
     }
 ];
