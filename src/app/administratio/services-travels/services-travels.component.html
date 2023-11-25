@@ -1,0 +1,75 @@
+<section>
+    <div id="principal" class="info-box">
+        <div id="first-group-of-groups" class="group-of-groups">
+            <div id="id-service-components" class="group-component">
+                <h3>ID Servicio</h3>
+                <select id="" [(ngModel)]="selectedIdService" class="input-info">
+                    <option value="{{is}}" *ngFor="let is of idService;let i = index">{{is}}</option>
+                </select>
+                <div id="btn-modify-id-service">
+                    <button id="" class="btn-modify-service">Nuevo</button>
+                    <button id="" class="btn-modify-service">Borrar</button>
+                </div>
+            </div>
+    
+            <div id="quality-service-components" class="group-component">
+                <h3>Calidad</h3>
+                <select id="" [(ngModel)]="qualityService" class="input-info">
+                    <option value="premium">Premium</option>
+                    <option value="ejectuivo">Ejectuivo</option>
+                    <option value="turista">Turista</option>
+                </select>
+                <button id="" class="btn-save">Guardar</button>
+            </div>
+    
+            <div id="availability-service-components" class="group-component">
+                <h3>Disponibilidad</h3>
+                <select id="" [(ngModel)]="avalability" class="input-info">
+                    <option value="disponible">Disponible</option>
+                    <option value="no-disponible">No disponible</option>
+                </select>
+                <button id="" class="btn-save">Guardar</button>
+            </div>
+
+            <div id="cost-service-components" class="group-component">
+                <h3>Costo</h3>
+                <input type="text" [(ngModel)]="departureDate" class="input-info">
+                <button id="" class="btn-save">Guardar</button>
+            </div>
+        </div>
+
+        <div id="second-group-of-groups" class="group-of-groups">
+            <div id="departure-date-service-components" class="group-component">
+                <h3>Fecha de partida</h3>
+                <input type="date" [(ngModel)]="departureDate">
+                <button id="" class="btn-save">Guardar</button>
+            </div>
+
+            <div id="arrival-date-service-components" class="group-component">
+                <h3>Fecha de llegada</h3>
+                <input type="date" [(ngModel)]="arrivalDate">
+                <button id="" class="btn-save">Guardar</button>
+            </div>
+
+            <div id="departure-time-service-components" class="group-component">
+                <h3>Hora de partida</h3>
+                <input type="time" [(ngModel)]="departureHour">
+                <button id="" class="btn-save">Guardar</button>
+            </div>
+
+            <div id="arrival-time-service-components" class="group-component">
+                <h3>Hora de llegada</h3>
+                <input type="time" [(ngModel)]="arrivalHour">
+                <button id="" class="btn-save">Guardar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="itinerary-info" class="info-box">
+        <h3>Itinerario</h3>
+        <select id="" [(ngModel)]="selectedItinerary">
+            <option value="{{itinerary}}" *ngFor="let itinerary of itineraries;let i = index">{{itinerary}}</option>
+        </select>
+        <button id="btn-save-itinerary" class="btn-save">Guardar</button>
+    </div>
+</section>

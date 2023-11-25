@@ -1,0 +1,62 @@
+    section{
+        margin-top: 150px;
+        display: flex;
+    }
+
+    .info-box{
+        background-color: #F5DEB3;
+        border: 2px solid #DAA520;
+        border-radius: 10px;
+        width: 30%;
+        height: 550px;
+        display: flex;
+    }
+
+    #itinerary-info{
+        margin-left: 20px;
+        width: 20%;
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .group-component{
+        margin-left: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .input-info{
+        margin-top: 3px;
+    }
+
+    input, select{
+        border-radius: 5px;
+    }
+
+    .btn-save{
+        margin-top: 10px;
+        align-self: center;
+    }
+
+    .btn-modify-service{
+        margin-top: 10px;
+        align-self: center;
+        margin-left: 5px;
+    }
+
+    button{
+        background-color: #FFD700;
+        color: #000000;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        align-self: flex-end;
+    }
+
+    button:hover {
+        background-color: #8B4513; /* Cambio de color al pasar el ratón */
+        color: #ffffff;
+    }

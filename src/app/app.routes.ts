@@ -8,6 +8,7 @@ import { TravelFindComponent } from './pages/travel-find/travel-find.component';
 import { ItineraryMaintenanceComponent } from './administratio/itinerary-maintenance/itinerary-maintenance.component';
 import { TicketSalesComponent } from './administratio/ticket-sales/ticket-sales.component';
 import { BusesComponent } from './administratio/buses/buses.component';
+import { ServicesTravelsComponent } from './administratio/services-travels/services-travels.component';
 
 export const routes: Routes = [
     {
@@ -45,5 +46,9 @@ export const routes: Routes = [
     {
         path: 'administration/buses',
         component: BusesComponent
+    },
+    {
+        path: 'services-travel',
+        component: ServicesTravelsComponent
     }
 ];
