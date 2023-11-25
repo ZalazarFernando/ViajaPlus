@@ -1,0 +1,34 @@
+<section>
+    <div id="upload-information">
+        <div id="name-and-lastname-info" class="info-box">
+            <div id="name-info">
+                <h3>Nombre</h3>
+                <input 
+                    type="text" 
+                    name="name" 
+                    id="name-input"
+                    [(ngModel)]="name">
+            </div>
+            <div id="lastname-info">
+                <h3>Apellido</h3>
+                <input 
+                    type="text" 
+                    name="lastname" 
+                    id="lastname-input"
+                    [(ngModel)]="lastname">
+            </div>
+        </div>
+        <div id="dni-info" class="info-box">
+            <h3>DNI</h3>
+            <input 
+                type="text" 
+                name="dni" 
+                id="dni-input"
+                [(ngModel)]="dni">
+
+            <button 
+                id="btn-sales"
+                (click)="saveData()">Comprar</button>
+        </div>
+    </div>
+</section>

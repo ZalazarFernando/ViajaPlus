@@ -6,6 +6,7 @@ import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { DestinationComponent } from './pages/destination/destination.component';
 import { TravelFindComponent } from './pages/travel-find/travel-find.component';
 import { ItineraryMaintenanceComponent } from './administratio/itinerary-maintenance/itinerary-maintenance.component';
+import { TicketSalesComponent } from './administratio/ticket-sales/ticket-sales.component';
 
 export const routes: Routes = [
     {
@@ -33,7 +34,11 @@ export const routes: Routes = [
         component: TravelFindComponent
     },
     {
-        path: 'itinerary-maintenance',
+        path: 'administration/itinerary-maintenance',
         component: ItineraryMaintenanceComponent
+    },
+    {
+        path: 'administration/ticket-sales',
+        component: TicketSalesComponent
     }
 ];

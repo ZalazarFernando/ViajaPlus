@@ -1,0 +1,44 @@
+    section{
+        margin-top: 150px;
+        align-items: center;
+    }
+
+    #upload-information{
+        background-color: #F5DEB3;
+        border: 2px solid #DAA520;
+        border-radius: 10px;
+        align-items: center;
+        margin-left: 20%;
+        width: 60%;
+        height: 200px;
+    }
+
+    #upload-information input,
+    h3{
+        margin-left: 20px;
+        border-radius: 5px;
+    }
+
+    #name-and-lastname-info{
+        display: flex;
+    }
+
+    .info-box{
+        margin-left: 20%;
+    }
+
+    #btn-sales{
+        background-color: #FFD700;
+        color: #000000;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        align-self: flex-end;
+        margin-left: 50px;
+    }
+
+    #btn-sales:hover {
+        background-color: #8B4513; /* Cambio de color al pasar el ratón */
+        color: #ffffff;
+      }
