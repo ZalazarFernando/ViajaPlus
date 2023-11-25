@@ -3,7 +3,9 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { CiudadService } from '../../services/ciudad.service';
 import { TravelFindComponent } from '../travel-find/travel-find.component';
-import { FormsModule } from '@angular/forms';
+import { FormControl, FormsModule } from '@angular/forms';
+import { Observable, debounceTime, distinctUntilChanged, switchMap } from 'rxjs';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +13,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     FormsModule,
     CommonModule,
-    TravelFindComponent
+    TravelFindComponent,
+    ReactiveFormsModule 
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
@@ -27,12 +30,23 @@ export class HomeComponent {
   public radioOp2: string="";
 
   public messageToSend: any[] = [];
+  filteredCities$: Observable<string[]>;
+  cityControl = new FormControl();
+
 
   constructor(
-    private router: Router
-    //private cityService: CiudadService,
+    private router: Router,
+    private cityService: CiudadService,
     //private itineraryService: ItinerarioService
-    ) { }
+    ) { 
+
+      this.filteredCities$ = this.cityControl.valueChanges.pipe(
+        debounceTime(400),
+        distinctUntilChanged(),
+        switchMap(city => this.cityService.getCiudades(city))
+      );
+
+    }
 
   /*ngOnInit(){
     this.cityService.getCiudades(this.origin).subscribe((value)=>{

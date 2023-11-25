@@ -4,7 +4,10 @@
         <div id="search-box">
           <div id="text-input-box">
             <label>Origen</label>
-            <input type="text" name="origin" [(ngModel)]="origin">
+            <input [formControl]="cityControl" type="text" name="origin" z>
+            <ul *ngIf="filteredCities$ | async as cities">
+              <li *ngFor="let city of cities">{{ city }}</li>
+            </ul>
             <label>Destino</label>
             <input type="text" name="destination" [(ngModel)]="destination">
             <div id="radio-btn">
