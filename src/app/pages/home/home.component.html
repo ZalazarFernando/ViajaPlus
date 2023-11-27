@@ -2,26 +2,35 @@
     <div id="principal-frame">
       <div id="first-block">
         <div id="search-box">
+         
           <div id="text-input-box">
             <label>Origen</label>
-            <input [formControl]="cityControl" type="text" name="origin" z>
-            <ul *ngIf="filteredCities$ | async as cities">
-              <li *ngFor="let city of cities">{{ city }}</li>
-            </ul>
+            <input #originInput [formControl]="originCityControl" type="text" name="origin">
+            <!-- <div  *ngIf="!originSelected"> -->
+              <select *ngIf="filteredOriginCities | async as originCities" [(ngModel)]="origin"  (change)="assignOriginValueToInput($event.target)">
+                <option *ngFor="let city of originCities" [value]="city">{{ city }}</option>
+              </select>
+            <!-- </div> -->
             <label>Destino</label>
-            <input type="text" name="destination" [(ngModel)]="destination">
-            <div id="radio-btn">
+            <input #destinationInput [formControl]="destinationCityControl" type="text" name="destination">
+            <!-- <div *ngIf="!destinationSelected"> -->
+              <select *ngIf="filteredDestinationCities | async as destinationCities" [(ngModel)]="destination"  (change)="assignDestinationValueToInput($event.target)">
+                <option *ngFor="let city of destinationCities" [value]="city">{{ city }}</option>
+              </select>
+            <!-- </div> -->
+            <!-- <div id="radio-btn">
               <input type="radio" name="round-trip" [(ngModel)]="radioOp1" (change)="handleRadioChange('op1')" [checked]="dateBackDisabled">
               <label>ida</label>
               <input type="radio" name="round-trip" [(ngModel)]="radioOp2" (change)="handleRadioChange('op2')" [checked]="!dateBackDisabled">
               <label>ida y vuelta</label>
-            </div>
+            </div> -->
           </div>
+          
           <div id="others-input-box">
             <label>Fecha de partida</label>
-            <input type="date" name="date_leaving" [(ngModel)]="departureDate">
-            <label>Fecha de regreso</label>
-            <input type="date" name="date_back" [(ngModel)]="backDate" [disabled]="dateBackDisabled">
+            <input type="date" name="date_leaving" [(ngModel)]="departureDate" [min]="today">
+            <!-- <label>Fecha de regreso</label>
+            <input type="date" name="date_back" [(ngModel)]="backDate" [disabled]="dateBackDisabled"> -->
             <label>Cantidad de pasajeros</label>
             <select [(ngModel)]="passengers">
               <option value="1Passenger">1</option>
@@ -33,7 +42,7 @@
             </select>
           </div>
           <button id="search_date_travel_btn" class="search_btn" (click)="SearchTravel()">Buscar</button>
-          <app-travel-find [messageGet]="messageToSend"></app-travel-find>
+          <!-- <app-travel-find [messageGet]="messageToSend"></app-travel-find> -->
         </div>
   
         <div id="way-to-pay-box">

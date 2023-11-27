@@ -1,8 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { ChooseChairComponent } from '../choose-chair/choose-chair.component';
+import { ViajeService } from '../../services/opciones.service';
+import { Respuesta } from '../../models/respuesta';
 
 @Component({
   selector: 'app-travel-find',
@@ -13,14 +15,54 @@ import { ChooseChairComponent } from '../choose-chair/choose-chair.component';
   templateUrl: './travel-find.component.html',
   styleUrl: './travel-find.component.css'
 })
-export class TravelFindComponent {
+export class TravelFindComponent implements OnInit {
   @Input() messageGet: any="";
-  constructor(private router: Router){}
+  public optionList: Respuesta;
+
+  
+  constructor(private router: Router,
+    private route: ActivatedRoute,
+    private viajeService: ViajeService){
+      
+      this.optionList = {
+        itinerarios: [],
+        tramos: []
+      }
+    }
+
+  ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      let origin = params['origin'];
+      let destination = params['destination'];
+      let departureDate = params['departureDate'];
+      let passengers = params['passengers'];
+  
+      // Llama a tu método aquí
+      this.getTravelOptions(origin, destination, departureDate, passengers);
+    });
+  }
 
   redirectChair(){
     this.router.navigate(['./choose-chair']);
   }
 
+  getTravelOptions(origin: string, destination: string, departureDate: string, passengers: number) {
+    let date = new Date(departureDate);
+    let timestamp = Math.floor(date.getTime() / 1000);
+    this.viajeService.getOpciones(origin, destination, timestamp.toString())
+    .subscribe({
+      next: (respuesta) => {
+        // Maneja la respuesta aquí
+        console.log(respuesta);
+        this.optionList = respuesta
+      },
+      error: (error) => {
+        // Maneja el error aquí
+        console.error('Ocurrió un error al obtener las opciones de viaje:', error);
+      }
+    });
+  }
+/*
   info_travels: any[] = [
     { 
       service : 'FlechaBus',
@@ -52,5 +94,5 @@ export class TravelFindComponent {
       cost : '2000',
       quantity_seat : '10'
     }
-  ];
+  ];*/
 }

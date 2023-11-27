@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Ciudad } from '../models/Ciudad';
+import { Observable, map } from 'rxjs';
+import { Ciudad } from '../models/ciudad';
 
 @Injectable({
   providedIn: 'root'
@@ -9,13 +9,12 @@ import { Ciudad } from '../models/Ciudad';
 export class CiudadService {
 
   private apiUrl = 'http://localhost:3000';
-  ciudades: Ciudad[] | undefined;
 
   constructor(private http: HttpClient) {}
 
   getCiudades(name: string): Observable<Ciudad[]> {
-      return this.http.get<any>(`${this.apiUrl}/ciudad/${name}`).subscribe(data => {
-        this.ciudades = data.data;
-      });
+    return this.http.get<{data: Ciudad[]}>(`${this.apiUrl}/ciudad/${name}`).pipe(
+      map((response: { data: any; }) => response.data)
+    );
   }
 }
