@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
+import { Ciudad } from '../models/ciudad';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,9 @@ export class CiudadService {
 
   constructor(private http: HttpClient) {}
 
-  getCiudades(name: string): Observable<any> {
-      return this.http.get(`${this.apiUrl}/ciudades/${name}`);
+  getCiudades(name: string): Observable<Ciudad[]> {
+    return this.http.get<{data: Ciudad[]}>(`${this.apiUrl}/ciudad/${name}`).pipe(
+      map((response: { data: any; }) => response.data)
+    );
   }
 }

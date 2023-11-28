@@ -4,8 +4,9 @@ import { Router } from '@angular/router';
 import { CiudadService } from '../../services/ciudad.service';
 import { TravelFindComponent } from '../travel-find/travel-find.component';
 import { FormControl, FormsModule } from '@angular/forms';
-import { Observable, debounceTime, distinctUntilChanged, switchMap } from 'rxjs';
+import { Observable, catchError, debounceTime, distinctUntilChanged, map, of, startWith, switchMap, tap } from 'rxjs';
 import { ReactiveFormsModule } from '@angular/forms';
+import { Ciudad } from '../../models/ciudad';
 
 @Component({
   selector: 'app-home',
@@ -30,37 +31,78 @@ export class HomeComponent {
   public radioOp2: string="";
 
   public messageToSend: any[] = [];
-  filteredCities$: Observable<string[]>;
-  cityControl = new FormControl();
+  filteredOriginCities: Observable<string[]>;
+  filteredDestinationCities: Observable<string[]>;
+  //cities: Observable<Ciudad[]> | undefined
+  public originCityControl = new FormControl();
+  public destinationCityControl = new FormControl();
 
+  public errorMessage: string = "";
+
+  public originSelected: boolean = false;
+  public destinationSelected: boolean = false;
+
+  public originCities: string[] = [];
+
+  public destinationCities: string[] = [];
+  public today = new Date().toISOString().split('T')[0];
 
   constructor(
     private router: Router,
     private cityService: CiudadService,
-    //private itineraryService: ItinerarioService
     ) { 
 
-      this.filteredCities$ = this.cityControl.valueChanges.pipe(
+      //todo guardar el id de la ciudad con el nombres
+      this.filteredOriginCities = this.originCityControl.valueChanges.pipe(
         debounceTime(400),
         distinctUntilChanged(),
-        switchMap(city => this.cityService.getCiudades(city))
+        switchMap(city => {
+          return this.cityService.getCiudades(city).pipe(
+            catchError(error => {
+              console.error(error);
+              this.errorMessage = 'Ocurrió un error al buscar las ciudades';
+              return of([]); // Devuelve un arreglo vacío si hay un error
+            })
+          );
+        }),
+        map(ciudades => ciudades.map(ciudad => ciudad.Nombre)), // Transforma el arreglo de ciudades a un arreglo de nombres
+        tap(ciudades => {
+          debugger
+          this.originSelected = false
+          if (ciudades.length === 0) {
+            this.originSelected = false
+            this.errorMessage = 'No contamos con origen/destino disponible para esa ubicación';
+          } else {
+            this.errorMessage = "";
+          }
+        })
       );
 
+
+      this.filteredDestinationCities = this.destinationCityControl.valueChanges.pipe(
+        debounceTime(400),
+        distinctUntilChanged(),
+        switchMap(city => {
+          return this.cityService.getCiudades(city).pipe(
+            catchError(error => {
+              console.error(error);
+              this.errorMessage = 'Ocurrió un error al buscar las ciudades';
+              return of([]); // Devuelve un arreglo vacío si hay un error
+            })
+          );
+        }),
+        map(ciudades => ciudades.map(ciudad => ciudad.Nombre)), // Transforma el arreglo de ciudades a un arreglo de nombres
+        tap(ciudades => {
+          debugger
+          this.destinationSelected = false
+          if (ciudades.length === 0) {
+            this.errorMessage = 'No contamos con origen/destino disponible para esa ubicación';
+          } else {
+            this.errorMessage = "";
+          }
+        })
+      );
     }
-
-  /*ngOnInit(){
-    this.cityService.getCiudades(this.origin).subscribe((value)=>{
-      this.origin = value;
-    });
-
-    this.cityService.getCiudades(this.destination).subscribe((value)=>{
-      this.destination = value;
-    });
-
-    this.itineraryService.getItinerario(this.origin, this.destination, this.departureDate.getTime()).subscribe((value)=>{
-
-    })
-  }*/
 
   dateBackDisabled: boolean = true;
 
@@ -69,6 +111,24 @@ export class HomeComponent {
       this.dateBackDisabled = false; // Habilitar el input date "date_back"
     } else {
       this.dateBackDisabled = true; // Deshabilitar el input date "date_back"
+    }
+  }
+
+  assignOriginValueToInput(value: any) {
+    debugger
+    console.log(value?.value);
+    if (value.value){
+      this.originCityControl.setValue(value.value)
+      this.origin = value.value
+    }
+  }
+  assignDestinationValueToInput(value: any) {
+    debugger
+    console.log(value?.value);
+    if (value.value){
+      this.destinationCityControl.setValue(value.value)
+      this.destination = value.value
+      
     }
   }
 
@@ -82,15 +142,14 @@ export class HomeComponent {
     const roundTrip = (document.querySelector('input[name="round-trip"]:checked') as HTMLInputElement).value;*/
     
     if (this.origin && this.destination && this.departureDate && this.passengers) {
-      this.messageToSend.push(this.origin);
-      this.messageToSend.push(this.destination);
-      this.messageToSend.push(this.departureDate);
-      this.messageToSend.push(this.backDate);
-      this.messageToSend.push(this.passengers);
-      this.messageToSend.push(this.radioOp1);
-      this.messageToSend.push(this.radioOp2);
-
-      this.router.navigate(['./travel-find']);
+      this.router.navigate(['./travel-find'], { 
+        queryParams: { 
+          origin: this.origin, 
+          destination: this.destination, 
+          departureDate: this.departureDate, 
+          passengers: this.passengers 
+        } 
+      });
     }
   }
 
