@@ -15,10 +15,10 @@
     
             <div id="type-service" class="info-div">
                 <h3>Tipo de atención</h3>
-                <input 
-                    type="text" 
-                    class="info-input"
-                    [(ngModel)]="typeService">
+                <select [(ngModel)]="typeService">
+                    <option value="común">Común</option>
+                    <option value="ejecutivo">Ejecutivo</option>
+                </select>
                 <div id="btn-of-type-service" class="btn-modify">
                     <button class="btn-save">Guardar</button>
                 </div>
@@ -26,11 +26,12 @@
     
             <div id="category" class="info-div">
                 <h3>Categoría</h3>
-                <input 
-                    type="text" 
-                    class="info-input"
-                    [(ngModel)]="category">
-                <div id="btn-of-category" class="btn-modify">
+                <select [(ngModel)]="category">
+                    <option value="común">Común</option>
+                    <option value="semicama">Semicama</option>
+                    <option value="coche-cama">Coche cama</option>
+                </select>
+                <div id="btn-of-category" class="btn-modify">   
                     <button class="btn-save">Guardar</button>
                 </div>
             </div>
@@ -51,10 +52,10 @@
     
             <div id="condition" class="info-div">
                 <h3>Situación</h3>
-                <input 
-                    type="text" 
-                    class="info-input"
-                    [(ngModel)]="condition">
+                <select [(ngModel)]="condition">
+                    <option value="disponible">Disponible</option>
+                    <option value="no-disponible">No disponible</option>
+                </select>
                 <div id="btn-of-condition" class="btn-modify">
                     <button class="btn-save">Guardar</button>
                 </div>
@@ -74,20 +75,10 @@
     </div>
 
     <div id="gruop-count-chairs">
-        <div id="floor-one-chairs" class="info-box">
+        <div id="count-chairs" class="info-box">
             <div class="info-chairs">
-                <h3>Cantidad sillas primer piso</h3>
-                <input type="text" [(ngModel)]="floorOneNumberChairs">
-                <div id="btn-of-unit" class="btn-modify">
-                    <button id="btn-save-count-chair">Guardar</button>
-                </div>
-            </div>
-        </div>
-    
-        <div id="floor-two-chairs" class="info-box" *ngIf="showSecondFloorChairs">
-            <div class="info-chairs">
-                <h3>Cantidad sillas segundo piso</h3>
-                <input type="text" [(ngModel)]="floorSecondNumberChairs">
+                <h3>Cantidad sillas</h3>
+                <input type="text" [(ngModel)]="NumberChairs">
                 <div id="btn-of-unit" class="btn-modify">
                     <button id="btn-save-count-chair">Guardar</button>
                 </div>

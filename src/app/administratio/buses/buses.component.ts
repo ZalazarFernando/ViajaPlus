@@ -22,8 +22,7 @@ export class BusesComponent {
   condition: string="";
   cost: string="";
 
-  floorOneNumberChairs: string="";
-  floorSecondNumberChairs: string="";
+  NumberChairs: string="";
 
   showSecondFloorChairs: Boolean = true;
   showNewNumberUnit: boolean = true;
@@ -67,13 +66,5 @@ export class BusesComponent {
 
   set setTypeService(value: string){
     this.typeService = value;
-  }
-
-  get getFloorOneNumberChairs(){
-    return this.floorOneNumberChairs;
-  }
-
-  set setFloorOneNumberChairs(value: string){
-    this.floorOneNumberChairs = value;
   }
 }

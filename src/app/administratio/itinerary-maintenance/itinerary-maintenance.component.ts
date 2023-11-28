@@ -25,7 +25,7 @@ export class ItineraryMaintenanceComponent {
   newItinerary: string="";
   
   isModified: boolean = false; //tiene que ser un array de booleans
-  showAddItinerary: boolean = false;
+  showAddItinerary: boolean = true;
 
   onChange() {
     this.isModified = true;

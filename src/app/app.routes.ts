@@ -48,7 +48,7 @@ export const routes: Routes = [
         component: BusesComponent
     },
     {
-        path: 'services-travel',
+        path: 'administration/services-travel',
         component: ServicesTravelsComponent
     }
 ];
