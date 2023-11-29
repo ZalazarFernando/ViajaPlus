@@ -26,9 +26,14 @@
                 id="dni-input"
                 [(ngModel)]="dni">
 
-            <button 
+            <div id="btn-ticket-reservation">
+                <button 
                 id="btn-sales"
                 (click)="saveData()">Comprar</button>
+                <button 
+                id="btn-reservation"
+                (click)="saveData()">Reservar</button>
+            </div>
         </div>
     </div>
 </section>

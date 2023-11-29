@@ -27,7 +27,14 @@
         margin-left: 20%;
     }
 
-    #btn-sales{
+    #btn-ticket-reservation{
+        display: flex;
+        flex-direction: column;
+        margin-right: 40%;
+        margin-top: -50px;
+    }
+
+    button{
         background-color: #FFD700;
         color: #000000;
         border: none;
@@ -36,9 +43,10 @@
         cursor: pointer;
         align-self: flex-end;
         margin-left: 50px;
+        margin-bottom: 5px;
     }
 
-    #btn-sales:hover {
+    button:hover {
         background-color: #8B4513; /* Cambio de color al pasar el ratón */
         color: #ffffff;
       }
