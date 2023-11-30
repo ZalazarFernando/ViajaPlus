@@ -10,7 +10,7 @@ export class ViajeService {
 
   constructor(private http: HttpClient) { }
 
-  getOpciones(origin: string, destination: string, date: string): Observable<Respuesta> {
+  getOpciones(origin: number, destination: number, date: string): Observable<Respuesta> {
     return this.http.get<Respuesta>(`http://localhost:3000/viaje/opciones?origin=${origin}&destination=${destination}&date=${date}`);
   }
 }

@@ -46,7 +46,7 @@ export class TravelFindComponent implements OnInit {
     this.router.navigate(['./choose-chair']);
   }
 
-  getTravelOptions(origin: string, destination: string, departureDate: string, passengers: number) {
+  getTravelOptions(origin: number, destination: number, departureDate: string, passengers: number) {
     let date = new Date(departureDate);
     let timestamp = Math.floor(date.getTime() / 1000);
     this.viajeService.getOpciones(origin, destination, timestamp.toString())

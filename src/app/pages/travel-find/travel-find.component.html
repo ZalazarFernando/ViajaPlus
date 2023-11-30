@@ -2,17 +2,14 @@
     <div *ngFor="let itinerario of optionList.itinerarios" class="card-travels">
         <!-- <h2>{{ itinerario.service }}</h2> -->
         <h2>Itinerarios completos</h2>
-
-        {{itinerario | json}}
-
         <div class="info-label">
             <div class="column-info">
                 <h3>Ciudad de origen</h3>
-                <!-- <label for="card_travels">{{ itinerario.origin_city }}</label> -->
+                <label for="card_travels">{{ itinerario.Origen }}</label>
             </div>
             <div class="column-info">
                 <h3>Ciudad de destino</h3>
-                <!-- <label for="card_travels">{{itinerario.destination_city}}</label> -->
+                <label for="card_travels">{{itinerario.Destino}}</label>
             </div>
             <div class="column-info">
                 <h3>Fecha de salida</h3>
@@ -24,11 +21,11 @@
             </div>
             <div class="column-info">
                 <h3>Calidad</h3>
-                <!-- <label for="card_travels">{{itinerario}}</label> -->
+                <label for="card_travels">{{itinerario.CategoriaTransporte}}</label>
             </div>
             <div class="column-info">
                 <h3>Precio</h3>
-                <label for="card_travels">{{itinerario.CostoServicio}}</label>
+                <label for="card_travels">{{itinerario.Costo}}</label>
             </div>
             <!-- <div class="column-info">
                 <h3>Asientos disponibles</h3>
@@ -42,19 +39,14 @@
         <!-- <h2>{{ tramo.service }}</h2> -->
         <h2>Tramos de itinerarios</h2>
 
-        {{tramo | json}}
-
-
         <div class="info-label">
             <div class="column-info">
                 <h3>Ciudad de origen</h3>
-                <!-- <label for="card_travels">{{ tramo.origin_city }}</label> -->
-                test
+                <label for="card_travels">{{ tramo.Origen }}</label>
             </div>
             <div class="column-info">
                 <h3>Ciudad de destino</h3>
-                <!-- <label for="card_travels">{{tramo.destination_city}}</label> -->
-                test
+                <label for="card_travels">{{tramo.Destino}}</label>
             </div>
             <div class="column-info">
                 <h3>Hora de salida</h3>
@@ -66,12 +58,11 @@
             </div>
             <div class="column-info">
                 <h3>Calidad</h3>
-                <!-- <label for="card_travels">{{tramo.}}</label> -->
-                test
+                <label for="card_travels">{{tramo.CategoriaTransporte}}</label>
             </div>
             <div class="column-info">
                 <h3>Precio</h3>
-                <label for="card_travels">{{tramo.CostoTramo}}</label>
+                <label for="card_travels">{{tramo.Costo}}</label>
             </div>
             <!-- <div class="column-info">
                 <h3>Asientos disponibles</h3>

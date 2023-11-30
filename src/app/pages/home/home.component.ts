@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, JsonPipe } from '@angular/common';
 import { Router } from '@angular/router';
 import { CiudadService } from '../../services/ciudad.service';
 import { TravelFindComponent } from '../travel-find/travel-find.component';
@@ -22,8 +22,8 @@ import { Ciudad } from '../../models/ciudad';
 })
 
 export class HomeComponent {
-  public origin: string="";
-  public destination: string="";
+  public origin: Ciudad={ID: 0, Nombre:""};
+  public destination: Ciudad={ID: 0, Nombre:""};
   public departureDate: Date | null = null;
   public backDate: Date | null = null;
   public passengers: string="";
@@ -31,8 +31,8 @@ export class HomeComponent {
   public radioOp2: string="";
 
   public messageToSend: any[] = [];
-  filteredOriginCities: Observable<string[]>;
-  filteredDestinationCities: Observable<string[]>;
+  filteredOriginCities: Observable<Ciudad[]>;
+  filteredDestinationCities: Observable<Ciudad[]>;
   //cities: Observable<Ciudad[]> | undefined
   public originCityControl = new FormControl();
   public destinationCityControl = new FormControl();
@@ -65,9 +65,11 @@ export class HomeComponent {
             })
           );
         }),
-        map(ciudades => ciudades.map(ciudad => ciudad.Nombre)), // Transforma el arreglo de ciudades a un arreglo de nombres
+        //map(ciudades => ciudades.map(ciudad => {
+        //  nombre:ciudad.Nombre
+        //  id:ciudad.ID
+        //})), // Transforma el arreglo de ciudades a un arreglo de nombres
         tap(ciudades => {
-          debugger
           this.originSelected = false
           if (ciudades.length === 0) {
             this.originSelected = false
@@ -91,9 +93,8 @@ export class HomeComponent {
             })
           );
         }),
-        map(ciudades => ciudades.map(ciudad => ciudad.Nombre)), // Transforma el arreglo de ciudades a un arreglo de nombres
+        //map(ciudades => ciudades.map(ciudad => ciudad.Nombre)), // Transforma el arreglo de ciudades a un arreglo de nombres
         tap(ciudades => {
-          debugger
           this.destinationSelected = false
           if (ciudades.length === 0) {
             this.errorMessage = 'No contamos con origen/destino disponible para esa ubicación';
@@ -114,22 +115,24 @@ export class HomeComponent {
     }
   }
 
-  assignOriginValueToInput(value: any) {
+  assignOriginValueToInput() {
     debugger
-    console.log(value?.value);
-    if (value.value){
-      this.originCityControl.setValue(value.value)
-      this.origin = value.value
-    }
+
+    console.log(this.origin)
+
+    //if ((event.target as HTMLInputElement).value){
+      this.originCityControl.setValue(this.origin.Nombre)
+      //this.origin.Nombre = value.value
+    //}
   }
-  assignDestinationValueToInput(value: any) {
-    debugger
-    console.log(value?.value);
-    if (value.value){
-      this.destinationCityControl.setValue(value.value)
-      this.destination = value.value
+  assignDestinationValueToInput() {
+    console.log(this.destination)
+
+    //if ((event.target as HTMLInputElement).value){
+      this.destinationCityControl.setValue(this.destination.Nombre)
+      //this.destination.Nombre = value.value
       
-    }
+    //}
   }
 
   //Intento para obtener información de la bd
@@ -144,30 +147,13 @@ export class HomeComponent {
     if (this.origin && this.destination && this.departureDate && this.passengers) {
       this.router.navigate(['./travel-find'], { 
         queryParams: { 
-          origin: this.origin, 
-          destination: this.destination, 
+          origin: this.origin.ID, 
+          destination: this.destination.ID, 
           departureDate: this.departureDate, 
           passengers: this.passengers 
         } 
       });
     }
-  }
-
-  //setter y getters
-  get getOrigin(): string {
-    return this.origin;
-  }
-  
-  set setOrigin(value: string) {
-    this.origin = value;
-  }
-
-  get getDestination(): string {
-    return this.destination;
-  }
-  
-  set setDestination(value: string) {
-    this.destination = value;
   }
 
   get getRadioOp1(): string {

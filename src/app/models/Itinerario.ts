@@ -1,10 +1,12 @@
 export interface Itinerario {
     ID: number;
-    CreatedAt: string;
-    UpdatedAt: string;
-    DeletedAt: string | null;
-    Disponibilidad: boolean;
+    Origen: string;
+    Destino: string;
     FechaPartida: string;
     FechaLlegada: string;
-    CostoServicio: number;
+    Costo: number;
+    Distancia: number;
+    CategoriaTransporte: string;
+    TipoAtencion: string;
+    Pisos: string;
   }

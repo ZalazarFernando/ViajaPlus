@@ -1,11 +1,13 @@
 export interface Tramo {
     ID: number;
-    CreatedAt: string;
-    UpdatedAt: string;
-    DeletedAt: string | null;
-    Distancia: number;
+    Origen: string;
+    Destino: string;
     FechaPartida: string;
     FechaLlegada: string;
-    CostoTramo: number;
+    Costo: number;
+    Distancia: number;
+    CategoriaTransporte: string;
+    TipoAtencion: string;
+    Pisos: string;
   }
   

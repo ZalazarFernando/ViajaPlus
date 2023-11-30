@@ -7,15 +7,15 @@
             <label>Origen</label>
             <input #originInput [formControl]="originCityControl" type="text" name="origin">
             <!-- <div  *ngIf="!originSelected"> -->
-              <select *ngIf="filteredOriginCities | async as originCities" [(ngModel)]="origin"  (change)="assignOriginValueToInput($event.target)">
-                <option *ngFor="let city of originCities" [value]="city">{{ city }}</option>
+              <select *ngIf="filteredOriginCities | async as originCities" [(ngModel)]="origin" (ngModelChange)="assignOriginValueToInput()">
+                <option *ngFor="let city of originCities" [ngValue]="city">{{ city.Nombre }}</option>
               </select>
             <!-- </div> -->
             <label>Destino</label>
             <input #destinationInput [formControl]="destinationCityControl" type="text" name="destination">
             <!-- <div *ngIf="!destinationSelected"> -->
-              <select *ngIf="filteredDestinationCities | async as destinationCities" [(ngModel)]="destination"  (change)="assignDestinationValueToInput($event.target)">
-                <option *ngFor="let city of destinationCities" [value]="city">{{ city }}</option>
+              <select *ngIf="filteredDestinationCities | async as destinationCities" [(ngModel)]="destination" (ngModelChange)="assignDestinationValueToInput()">
+                <option *ngFor="let city of destinationCities" [ngValue]="city" >{{ city.Nombre }}</option>
               </select>
             <!-- </div> -->
             <!-- <div id="radio-btn">
