@@ -1,7 +1,5 @@
-import { Itinerario } from "./Itinerario";
-import { Tramo } from "./tramo";
+import { Opciones } from "./opciones";
 
 export interface Respuesta {
-    itinerarios: Itinerario[];
-    tramos: Tramo[];
+  opciones: Opciones[];
   }

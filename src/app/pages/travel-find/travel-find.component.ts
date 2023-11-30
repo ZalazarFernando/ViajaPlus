@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { ChooseChairComponent } from '../choose-chair/choose-chair.component';
 import { ViajeService } from '../../services/opciones.service';
 import { Respuesta } from '../../models/respuesta';
+import { Opciones } from '../../models/opciones';
 
 @Component({
   selector: 'app-travel-find',
@@ -25,8 +26,7 @@ export class TravelFindComponent implements OnInit {
     private viajeService: ViajeService){
       
       this.optionList = {
-        itinerarios: [],
-        tramos: []
+        opciones: []
       }
     }
 

@@ -1,72 +1,35 @@
 <section>
-    <div *ngFor="let itinerario of optionList.itinerarios" class="card-travels">
+    <div *ngFor="let opciones of optionList.opciones" class="card-travels">
         <!-- <h2>{{ itinerario.service }}</h2> -->
-        <h2>Itinerarios completos</h2>
+        <h2>Opciones </h2>
         <div class="info-label">
             <div class="column-info">
                 <h3>Ciudad de origen</h3>
-                <label for="card_travels">{{ itinerario.Origen }}</label>
+                <label for="card_travels">{{ opciones.Origen }}</label>
             </div>
             <div class="column-info">
                 <h3>Ciudad de destino</h3>
-                <label for="card_travels">{{itinerario.Destino}}</label>
+                <label for="card_travels">{{opciones.Destino}}</label>
             </div>
             <div class="column-info">
                 <h3>Fecha de salida</h3>
-                <label for="card_travels">{{itinerario.FechaPartida}}</label>
+                <label for="card_travels">{{opciones.FechaPartida}}</label>
             </div>
             <div class="column-info">
                 <h3>Fecha de llegada</h3>
-                <label for="card_travels">{{itinerario.FechaLlegada}}</label>
+                <label for="card_travels">{{opciones.FechaLlegada}}</label>
             </div>
             <div class="column-info">
                 <h3>Calidad</h3>
-                <label for="card_travels">{{itinerario.CategoriaTransporte}}</label>
+                <label for="card_travels">{{opciones.CategoriaTransporte}}</label>
             </div>
             <div class="column-info">
                 <h3>Precio</h3>
-                <label for="card_travels">{{itinerario.Costo}}</label>
+                <label for="card_travels">{{opciones.Costo}}</label>
             </div>
             <!-- <div class="column-info">
                 <h3>Asientos disponibles</h3>
-                <label for="card_travels">{{itinerario.quantity_seat}}</label>
-            </div> -->
-        </div>
-        <button class="done-btn" (click)="redirectChair()">ver</button>
-    </div>
-
-    <div *ngFor="let tramo of optionList.tramos" class="card-travels">
-        <!-- <h2>{{ tramo.service }}</h2> -->
-        <h2>Tramos de itinerarios</h2>
-
-        <div class="info-label">
-            <div class="column-info">
-                <h3>Ciudad de origen</h3>
-                <label for="card_travels">{{ tramo.Origen }}</label>
-            </div>
-            <div class="column-info">
-                <h3>Ciudad de destino</h3>
-                <label for="card_travels">{{tramo.Destino}}</label>
-            </div>
-            <div class="column-info">
-                <h3>Hora de salida</h3>
-                <label for="card_travels">{{tramo.FechaPartida}}</label>
-            </div>
-            <div class="column-info">
-                <h3>Fecha de llegada</h3>
-                <label for="card_travels">{{tramo.FechaLlegada}}</label>
-            </div>
-            <div class="column-info">
-                <h3>Calidad</h3>
-                <label for="card_travels">{{tramo.CategoriaTransporte}}</label>
-            </div>
-            <div class="column-info">
-                <h3>Precio</h3>
-                <label for="card_travels">{{tramo.Costo}}</label>
-            </div>
-            <!-- <div class="column-info">
-                <h3>Asientos disponibles</h3>
-                <label for="card_travels">{{itinerario.quantity_seat}}</label>
+                <label for="card_travels">{{opciones.quantity_seat}}</label>
             </div> -->
         </div>
         <button class="done-btn" (click)="redirectChair()">ver</button>

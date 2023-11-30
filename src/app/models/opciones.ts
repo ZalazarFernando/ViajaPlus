@@ -1,4 +1,4 @@
-export interface Itinerario {
+export interface Opciones {
     ID: number;
     Origen: string;
     Destino: string;
