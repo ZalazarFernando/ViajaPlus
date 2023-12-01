@@ -44,7 +44,7 @@ export class TicketSalesComponent implements OnInit{
       this.costo = params['costo']
     });
    
-    await this.getSeatsOptions(this.service);
+    //await this.getSeatsOptions(this.service);
 
   }
 
