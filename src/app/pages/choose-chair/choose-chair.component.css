@@ -47,3 +47,37 @@
     margin: 5px; /* Ajusta el margen según sea necesario */
     box-sizing: border-box; /* Incluye el margen en el tamaño total del elemento */
   }
+  .floor-box {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .column {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .pasillo {
+    width: 50px; /* Ajusta esto según tus necesidades */
+  }
+  .asiento {
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .asiento.disponible {
+    background-color: green;
+  }
+  
+  .asiento.no-disponible {
+    background-color: red;
+  }
+  
+  .asiento.seleccionado {
+    background-color: blue;
+  }

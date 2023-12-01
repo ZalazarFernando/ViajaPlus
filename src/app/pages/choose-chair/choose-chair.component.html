@@ -1,4 +1,75 @@
-<section>
+<section *ngIf="asientosEstado.length > 0">
+    <div id="principal">
+        <div id="floor-two" class="floor-box" >
+            <div id="two-long-columns-floor-two" class="long-column">
+                <!-- Primera columna de asientos -->
+                <div id="first-column-floor-two" class="column">
+                    <ng-container *ngFor="let asiento of asientosEstado.slice(0, asientosEstado.length / 4); let i = index">
+                      <button 
+                      [ngClass]="asiento.estado === 'no-disponible' ? 'asiento no-disponible' : asiento.estado === 'disponible' ? 'asiento disponible' : 'asiento seleccionado'"
+                        (click)="seleccionarAsiento(asiento)">
+                        {{asiento.id}}
+                      </button>
+                    </ng-container>
+                </div>
+                <!-- Segunda columna de asientos -->
+                <div id="second-column-floor-two" class="column">
+                    <ng-container *ngFor="let asiento of asientosEstado.slice(asientosEstado.length / 4, asientosEstado.length / 2); let i = index">
+                      <button 
+                      [ngClass]="asiento.estado === 'no-disponible' ? 'asiento no-disponible' : asiento.estado === 'disponible' ? 'asiento disponible' : 'asiento seleccionado'"
+                        (click)="seleccionarAsiento(asiento)">
+                        {{asiento.id}}
+                      </button>
+                    </ng-container>
+                </div>
+                <!-- Espacio para el pasillo -->
+                <div class="pasillo"></div>
+                <!-- Tercera columna de asientos -->
+                <div id="third-column-floor-two" class="column">
+                    <ng-container *ngFor="let asiento of asientosEstado.slice(asientosEstado.length / 2, 3 * asientosEstado.length / 4); let i = index">
+                      <button 
+                      [ngClass]="asiento.estado === 'no-disponible' ? 'asiento no-disponible' : asiento.estado === 'disponible' ? 'asiento disponible' : 'asiento seleccionado'"
+                        (click)="seleccionarAsiento(asiento)">
+                        {{asiento.id}}
+                      </button>
+                    </ng-container>
+                </div>
+                <!-- Cuarta columna de asientos -->
+                <div id="fourth-column-floor-two" class="column">
+                    <ng-container *ngFor="let asiento of asientosEstado.slice(3 * asientosEstado.length / 4); let i = index">
+                      <button 
+                      [ngClass]="asiento.estado === 'no-disponible' ? 'asiento no-disponible' : asiento.estado === 'disponible' ? 'asiento disponible' : 'asiento seleccionado'"
+                        (click)="seleccionarAsiento(asiento)">
+                        {{asiento.id}}
+                      </button>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+
+        <div id="info-travel">
+            <div>                
+                <p>Silla no disponible</p>
+                <div class="asiento disponible">
+                <!-- <img src="assets/image/circle-grey.png" alt="circle-grey" class="image-chair"> -->
+                </div>
+                <p>Silla disponible</p>
+                <div class="asiento no-disponible">
+                </div>
+                <p>Silla seleccionada</p>
+                <div class="asiento seleccionado">
+                </div>
+            </div>
+        </div>
+    </div>
+    <button (click)="confirmarAsientos()">Confirmar asientos</button>
+
+</section>
+
+
+
+
+ <!-- <section>
     <div id="principal">
         <div id="floor-two" class="floor-box" >
             <div id="two-long-columns-floor-two" class="long-column">
@@ -105,9 +176,9 @@
                     </div>
                 </div>
             </div> 
-        </div>
+        </div>-->
 
-        <div id="info-travel">
+        <!-- <div id="info-travel">
             <div id="show-types-chair">
                 <div class="show-chair">
                     <img src="assets/image/circle-grey.png" alt="circle-grey" class="image-chair">
@@ -122,6 +193,6 @@
                     <h3>Silla seleccionada</h3>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+        </div> -->
+    <!-- </div> -->
+<!-- </section>  --> 

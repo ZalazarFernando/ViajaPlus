@@ -19,7 +19,11 @@ import { Opciones } from '../../models/opciones';
 export class TravelFindComponent implements OnInit {
   @Input() messageGet: any="";
   public optionList: Respuesta;
-
+  public origin:string = "";
+  public destination:string = "";
+  public departureDate :string = "";
+  public passengers:string = "";
+  public service:number = 0;
   
   constructor(private router: Router,
     private route: ActivatedRoute,
@@ -37,13 +41,23 @@ export class TravelFindComponent implements OnInit {
       let departureDate = params['departureDate'];
       let passengers = params['passengers'];
   
-      // Llama a tu método aquí
       this.getTravelOptions(origin, destination, departureDate, passengers);
     });
   }
 
-  redirectChair(){
-    this.router.navigate(['./choose-chair']);
+  redirectChair(serviceID:number,IDTramoOrigen:number,IDTramoDestino:number,costo:number){
+    this.router.navigate(['./choose-chair'], { 
+      queryParams: { 
+        origin: this.origin, 
+        destination: this.destination, 
+        departureDate: this.departureDate, 
+        passengers: this.passengers,
+        service: serviceID,
+        IDTramoOrigen: IDTramoOrigen,
+        IDTramoDestino: IDTramoDestino,
+        costo: costo
+      } 
+    });
   }
 
   getTravelOptions(origin: number, destination: number, departureDate: string, passengers: number) {
