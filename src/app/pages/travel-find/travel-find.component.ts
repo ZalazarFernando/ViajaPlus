@@ -21,6 +21,8 @@ export class TravelFindComponent implements OnInit {
   public optionList: Respuesta;
   public origin:string = "";
   public destination:string = "";
+  public originID:number = 0;
+  public destinationID:number = 0;
   public departureDate :string = "";
   // public passengers:string = "";
   public service:number = 0;
@@ -35,21 +37,25 @@ export class TravelFindComponent implements OnInit {
     }
 
   ngOnInit() {
+    debugger
     this.route.queryParams.subscribe(params => {
       let origin = params['origin'];
       let destination = params['destination'];
       let departureDate = params['departureDate'];
-      // let passengers = params['passengers'];
+
+      this.originID = Number(origin)
+      this.destinationID = Number(destination)
   
-      this.getTravelOptions(origin, destination, departureDate);
+      this.getTravelOptions(this.originID, this.destinationID, departureDate);
     });
   }
 
   redirectChair(serviceID:number,vehicleID:number,IDTramoOrigen:number,IDTramoDestino:number,costo:number){
+    debugger
     this.router.navigate(['./choose-chair'], { 
       queryParams: { 
-        origin: this.origin, 
-        destination: this.destination, 
+        origin: this.originID, 
+        destination: this.destinationID, 
         departureDate: this.departureDate, 
         vehicleID: vehicleID,
         serviceID: serviceID,
@@ -62,6 +68,7 @@ export class TravelFindComponent implements OnInit {
 
   getTravelOptions(origin: number, destination: number, departureDate: string) {
     let date = new Date(departureDate);
+    debugger
     let timestamp = Math.floor(date.getTime() / 1000);
     this.viajeService.getOpciones(origin, destination, timestamp.toString())
     .subscribe({

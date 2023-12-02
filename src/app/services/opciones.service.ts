@@ -17,5 +17,5 @@ export class ViajeService {
 
   getAsientos(serviceID: number): Observable<Asiento[]> {
     return this.http.get<Asiento[]>(`http://localhost:3000/viaje/asientos/${serviceID}`);
-}
+  }
 }

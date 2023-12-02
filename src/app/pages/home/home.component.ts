@@ -116,7 +116,6 @@ export class HomeComponent {
   }
 
   assignOriginValueToInput() {
-    debugger
 
     console.log(this.origin)
 
