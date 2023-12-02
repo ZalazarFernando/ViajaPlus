@@ -1,0 +1,36 @@
+<section>
+    <div id="upload-information">
+        <div id="card-info" class="info-box">
+            <div id="number-card-info">
+                <h3>Numero de tarjeta</h3>
+                <input 
+                    type="text" 
+                    name="number-card" 
+                    id="number-card-input"
+                    [(ngModel)]="numberCard">
+            </div>
+            <div id="key-card-info">
+                <h3>Código de tarjeta</h3>
+                <input 
+                    type="text" 
+                    name="key-card" 
+                    id="key-card-input"
+                    [(ngModel)]="keyCard">
+            </div>
+            <div id="name-info">
+                <h3>Nombre en tarjeta</h3>
+                <input 
+                    type="text" 
+                    name="name-card" 
+                    id="name-input"
+                    [(ngModel)]="nameCard">
+            </div>
+
+            <div id="btn-ticket-reservation">
+                <button 
+                id="btn-sales"
+                (click)="saveData()">Comprar</button>
+            </div>
+        </div>
+    </div>
+</section>
