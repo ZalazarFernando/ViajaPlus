@@ -30,7 +30,8 @@ export class ChooseChairComponent {
   public destination:string = "";
   public departureDate :string = "";
   public passengers:number = 0;
-  public service:number = 0;
+  public vehicleID:number = 0;
+  public serviceID:number = 0;
   public IDTramoOrigen:number = 0;
   public IDTramoDestino:number = 0;
   public costo:number = 0;
@@ -41,7 +42,7 @@ export class ChooseChairComponent {
   asientosEstado: AsientoEstado[] = [];
 
   asientosSeleccionados = 0;
-  maxAsientos = 2; // Este valor debería venir de tu parámetro de consulta
+  maxAsientos = 1; // Este valor debería venir de tu parámetro de consulta
 
   constructor(private router: Router,
     private route: ActivatedRoute,
@@ -62,8 +63,8 @@ export class ChooseChairComponent {
       this.origin = params['origin'];
       this.destination = params['destination'];
       this.departureDate = params['departureDate'];
-      this.passengers = params['passengers'];
-      this.service = params['service'];
+      this.vehicleID = params['vehicleID'];
+      this.serviceID = params['serviceID'];
       this.IDTramoOrigen = params['IDTramoOrigen'];
       this.IDTramoDestino = params['IDTramoDestino'];
       this.costo = params['costo']
@@ -74,7 +75,7 @@ export class ChooseChairComponent {
         estado: 'no-disponible'
       });
     }
-    await this.getSeatsOptions(this.service);
+    await this.getSeatsOptions(this.serviceID);
 
   }
 
@@ -126,17 +127,21 @@ export class ChooseChairComponent {
   }
 
   confirmarAsientos(): void {
-    this.router.navigate(['/administration/ticket-sales'], { 
-      queryParams: { 
-        origin: this.origin, 
-        destination: this.destination, 
-        departureDate: this.departureDate, 
-        passengers: this.passengers,
-        IDTramoOrigen: this.IDTramoOrigen,
-        IDTramoDestino: this.IDTramoDestino,
-        costo: this.costo * this.passengers
-      } 
-    });
+    // if (this.asientosSeleccionados === 1){
+      this.router.navigate(['/administration/ticket-sales'], { 
+        queryParams: { 
+          origin: this.origin, 
+          destination: this.destination, 
+          departureDate: this.departureDate, 
+          vehicleID: this.vehicleID,
+          serviceID: this.serviceID,
+          asientoID: this.asientosSeleccionadosId[0],
+          IDTramoOrigen: this.IDTramoOrigen,
+          IDTramoDestino: this.IDTramoDestino,
+          costo: this.costo
+        } 
+      });
+    // }
   }
   changeColorChair(column: string[], value: string, i: number){
     column[i] = value;

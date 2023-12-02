@@ -22,7 +22,7 @@ export class TravelFindComponent implements OnInit {
   public origin:string = "";
   public destination:string = "";
   public departureDate :string = "";
-  public passengers:string = "";
+  // public passengers:string = "";
   public service:number = 0;
   
   constructor(private router: Router,
@@ -39,20 +39,20 @@ export class TravelFindComponent implements OnInit {
       let origin = params['origin'];
       let destination = params['destination'];
       let departureDate = params['departureDate'];
-      let passengers = params['passengers'];
+      // let passengers = params['passengers'];
   
-      this.getTravelOptions(origin, destination, departureDate, passengers);
+      this.getTravelOptions(origin, destination, departureDate);
     });
   }
 
-  redirectChair(serviceID:number,IDTramoOrigen:number,IDTramoDestino:number,costo:number){
+  redirectChair(serviceID:number,vehicleID:number,IDTramoOrigen:number,IDTramoDestino:number,costo:number){
     this.router.navigate(['./choose-chair'], { 
       queryParams: { 
         origin: this.origin, 
         destination: this.destination, 
         departureDate: this.departureDate, 
-        passengers: this.passengers,
-        service: serviceID,
+        vehicleID: vehicleID,
+        serviceID: serviceID,
         IDTramoOrigen: IDTramoOrigen,
         IDTramoDestino: IDTramoDestino,
         costo: costo
@@ -60,7 +60,7 @@ export class TravelFindComponent implements OnInit {
     });
   }
 
-  getTravelOptions(origin: number, destination: number, departureDate: string, passengers: number) {
+  getTravelOptions(origin: number, destination: number, departureDate: string) {
     let date = new Date(departureDate);
     let timestamp = Math.floor(date.getTime() / 1000);
     this.viajeService.getOpciones(origin, destination, timestamp.toString())

@@ -8,6 +8,7 @@ export interface Opciones {
     FechaLlegada: string;
     Costo: number;
     Distancia: number;
+    IDTransporte: number;
     CategoriaTransporte: string;
     TipoAtencion: string;
     Pisos: string;

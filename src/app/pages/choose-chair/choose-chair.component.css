@@ -81,3 +81,9 @@
   .asiento.seleccionado {
     background-color: blue;
   }
+
+  .btn-confirm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

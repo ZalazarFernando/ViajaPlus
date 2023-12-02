@@ -31,7 +31,7 @@
             <input type="date" name="date_leaving" [(ngModel)]="departureDate" [min]="today">
             <!-- <label>Fecha de regreso</label>
             <input type="date" name="date_back" [(ngModel)]="backDate" [disabled]="dateBackDisabled"> -->
-            <label>Cantidad de pasajeros</label>
+            <!-- <label>Cantidad de pasajeros</label>
             <select [(ngModel)]="passengers">
               <option value="1">1</option>
               <option value="2">2</option>
@@ -39,9 +39,9 @@
               <option value="4">4</option>
               <option value="5">5</option>
               <option value="6">6</option>
-            </select>
+            </select> -->
+            <button id="search_date_travel_btn" class="search_btn" (click)="SearchTravel()">Buscar</button>
           </div>
-          <button id="search_date_travel_btn" class="search_btn" (click)="SearchTravel()">Buscar</button>
           <!-- <app-travel-find [messageGet]="messageToSend"></app-travel-find> -->
         </div>
   

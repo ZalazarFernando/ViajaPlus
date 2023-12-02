@@ -26,7 +26,7 @@ export class HomeComponent {
   public destination: Ciudad={ID: 0, Nombre:""};
   public departureDate: Date | null = null;
   public backDate: Date | null = null;
-  public passengers: string="";
+  //public passengers: string="";
   public radioOp1: string="";
   public radioOp2: string="";
 
@@ -144,13 +144,13 @@ export class HomeComponent {
     const passengers = (document.querySelector('select') as HTMLSelectElement).value;
     const roundTrip = (document.querySelector('input[name="round-trip"]:checked') as HTMLInputElement).value;*/
     
-    if (this.origin && this.destination && this.departureDate && this.passengers) {
+    if (this.origin && this.destination && this.departureDate) {
       this.router.navigate(['./travel-find'], { 
         queryParams: { 
           origin: this.origin.ID, 
           destination: this.destination.ID, 
-          departureDate: this.departureDate, 
-          passengers: this.passengers 
+          departureDate: this.departureDate
+          //passengers: this.passengers 
         } 
       });
     }
@@ -178,14 +178,6 @@ export class HomeComponent {
   
   set setBackDate(value: Date) {
     this.backDate = value;
-  }
-
-  get getPassengers(): string{
-    return this.passengers;
-  }
-  
-  set setPassengers(value: string) {
-    this.passengers = value;
   }
 
   //hardcodeo
