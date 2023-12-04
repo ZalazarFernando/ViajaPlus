@@ -1,0 +1,29 @@
+<div class="table-container">
+
+    <table>
+        <thead>
+          <tr>
+            <th>Nro de unidad</th>
+            <th>Tipo de atención</th>
+            <th>Categoría</th>
+            <th>Pisos</th>
+            <th>Situación</th>
+            <th>Costo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let buses of listaBuses">
+            <td>{{ buses.nroUnidad }}</td>
+            <td>{{ buses.tipoAtencion }}</td>
+            <td>{{ buses.categoria }}</td>
+            <td>{{ buses.pisos }}</td>
+            <td>{{ buses.situacion }}</td>
+            <td>{{ buses.costo }}</td>
+            <td>
+              <button class="boton-buses borrar" (click)="borrarBuses(buses)">Borrar</button>
+              <button class="boton-buses comprar" (click)="hacerAlgoOtro(buses)">Comprar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
