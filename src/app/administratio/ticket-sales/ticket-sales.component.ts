@@ -81,6 +81,8 @@ debugger
       .subscribe({
         next: (respuesta: any) => {
           console.log(respuesta);
+          
+          this.router.navigate(['./reservation']);
         },
         error: (error) => {
           console.error('Ocurrió un error al crear una nueva reserva:', error);

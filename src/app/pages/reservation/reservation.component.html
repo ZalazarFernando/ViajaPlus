@@ -1,0 +1,38 @@
+<div class="table-container">
+
+    <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>DNI</th>
+            <th>Estado</th>
+            <th>Costo</th>
+            <!-- <th>ID_Asiento</th>
+            <th>ID_Transporte</th> -->
+            <th>Ciudad Origen</th>
+            <th>Ciudad Destino</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let reserva of listaReservas">
+            <td>{{ reserva.ID }}</td>
+            <td>{{ reserva.Nombre }}</td>
+            <td>{{ reserva.Apellido }}</td>
+            <td>{{ reserva.DNI }}</td>
+            <td>{{ reserva.Estado }}</td>
+            <td>{{ reserva.Costo }}</td>
+            <!-- <td>{{ reserva.ID_Asiento }}</td>
+            <td>{{ reserva.ID_Transporte }}</td> -->
+            <td>{{ reserva.CiudadOrigen }}</td>
+            <td>{{ reserva.CiudadDestino }}</td>
+            <td>
+              <button class="boton-reserva borrar" (click)="hacerAlgo(reserva)">Borrar</button>
+              <button class="boton-reserva comprar" (click)="hacerAlgoOtro(reserva)">Comprar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>

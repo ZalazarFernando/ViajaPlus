@@ -11,6 +11,7 @@ import { BusesComponent } from './administratio/buses/buses.component';
 import { ServicesTravelsComponent } from './administratio/services-travels/services-travels.component';
 import { InfoToPayComponent } from './administratio/info-to-pay/info-to-pay.component';
 import { TicketsInfoComponent } from './administratio/tickets-info/tickets-info.component';
+import { ReservationComponent } from './pages/reservation/reservation.component';
 
 export const routes: Routes = [
     {
@@ -36,6 +37,10 @@ export const routes: Routes = [
     {
         path: 'travel-find',
         component: TravelFindComponent
+    },
+    {
+        path: 'reservation',
+        component: ReservationComponent
     },
     {
         path: 'administration/itinerary-maintenance',

@@ -6,10 +6,12 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http'; 
 import { AppComponent } from './app.component';
 import { routes } from './app.routes';
+import { ReservationComponent } from './pages/reservation/reservation.component';
 @NgModule({
   declarations: [
     AppComponent,
     // otros componentes aquí
+    ReservationComponent
   ],
   imports: [
     BrowserModule,
