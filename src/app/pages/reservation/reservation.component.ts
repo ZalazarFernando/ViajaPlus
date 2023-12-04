@@ -20,8 +20,13 @@ export class ReservationComponent implements OnInit {
     });
   }
 
-  hacerAlgo(reserva: any) {
-    console.log('Hiciste clic en el botón 1 del elemento: ', reserva);
+  borrarReserva(reserva: any) {
+    this.reservaService.deleteReserva(reserva.ID).
+      subscribe((reservas: any) => {
+        console.log('elemento borrado: ', reserva);
+        // Actualizar la lista de reservas en el front-end
+        this.listaReservas = this.listaReservas.filter(r => r.ID !== reserva.ID);
+      });
   }
 
   hacerAlgoOtro(reserva: any) {

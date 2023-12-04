@@ -19,4 +19,8 @@ export class ReservaService {
     return this.http.get<Reserva[]>(`http://localhost:3000/viaje/reservas`);
   }
 
+  deleteReserva(reservaID: number): Observable<any> {
+    return this.http.delete(`http://localhost:3000/viaje/reserva/${reservaID}`);
+  }
+
 }
