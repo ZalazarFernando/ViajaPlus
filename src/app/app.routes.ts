@@ -12,6 +12,7 @@ import { ServicesTravelsComponent } from './administratio/services-travels/servi
 import { InfoToPayComponent } from './administratio/info-to-pay/info-to-pay.component';
 import { TicketsInfoComponent } from './administratio/tickets-info/tickets-info.component';
 import { ReservationComponent } from './pages/reservation/reservation.component';
+import { ItinerarioComponent } from './pages/itinerario/itinerario.component';
 
 export const routes: Routes = [
     {
@@ -41,6 +42,10 @@ export const routes: Routes = [
     {
         path: 'reservation',
         component: ReservationComponent
+    },
+    {
+        path: 'itinerario',
+        component: ItinerarioComponent
     },
     {
         path: 'administration/itinerary-maintenance',

@@ -1,0 +1,27 @@
+<div class="table-container">
+
+    <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Hora Partida</th>
+            <th>Hora Llegada</th>
+            <th>Ciudad Origen</th>
+            <th>Ciudad Destino</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let itinerario of listaItinerarios">
+            <td>{{ itinerario.ID }}</td>
+            <td>{{ itinerario.horaPartida }}</td>
+            <td>{{ itinerario.horaLlegada }}</td>
+            <td>{{ itinerario.ciudadOrigen }}</td>
+            <td>{{ itinerario.ciudadDestino }}</td>
+            <td>
+              <button class="boton-itinerario borrar" (click)="hacerAlgo(itinerario)">Borrar</button>
+              <button class="boton-itinerario comprar" (click)="hacerAlgoOtro(itinerario)">Comprar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
