@@ -1,0 +1,74 @@
+<section>
+    <div id="show-information">
+        <div id="count-tickets-bus">
+            <h3>Cantidad pasajes por unidad</h3>
+            <select id="id-bus" [(ngModel)]="idBusSelected">
+                <option value="{{aux}}" 
+                *ngFor="let aux of idBuses">{{aux}}</option>
+            </select>
+            <input 
+                type="text" 
+                name="tickets-bus" 
+                id="tickets-bus-input"
+                [(ngModel)]="countTicketsBus">
+        </div>
+        <div id="count-tickets-itinerary">
+            <h3>Cantidad pasajes por itinerario</h3>
+            <select id="id-bus" [(ngModel)]="idItinerarySelected">
+                <option value="{{aux}}" 
+                *ngFor="let aux of idItineraries">{{aux}}</option>
+            </select>
+            <input 
+                type="text" 
+                name="tickets-itinerary" 
+                id="tickets-itinerary-input"
+                [(ngModel)]="countTicketsItinerary">
+        </div>
+        <div id="count-tickets-day">
+            <h3>Cantidad de tickets por día</h3>
+            <input 
+                type="date"
+                name="day-select"
+                id="day-select-input"
+                [(ngModel)]="dateSelected">
+            <input 
+                type="text" 
+                name="tickets-day" 
+                id="tickets-day-input"
+                [(ngModel)]="countTicketsDay">
+        </div>
+
+        <div id="count-tickets-month">
+            <h3>Cantidad de tickets por mes</h3>
+            <select id="month-select" [(ngModel)]="monthSelected">
+                <option 
+                    value="{{aux}}"
+                    *ngFor="let aux of monthArray">{{aux}}</option>
+            </select>
+            <select id="year-select" [(ngModel)]="yearSelected">
+                <option 
+                    value="{{aux}}"
+                    *ngFor="let aux of yearArray">{{aux}}</option>
+            </select>
+            <input 
+                type="text" 
+                name="tickets-month" 
+                id="tickets-month-input"
+                [(ngModel)]="countTicketsMonth">
+        </div>
+
+        <div id="count-tickets-year">
+            <h3>Cantidad de tickets por año</h3>
+            <select id="only-year-select" [(ngModel)]="yearSelected">
+                <option 
+                    value="{{aux}}"
+                    *ngFor="let aux of yearArray">{{aux}}</option>
+            </select>
+            <input 
+                type="text" 
+                name="tickets-year" 
+                id="tickets-year-input"
+                [(ngModel)]="countTicketsYear">
+        </div>
+    </div>
+</section>

@@ -10,6 +10,7 @@ import { TicketSalesComponent } from './administratio/ticket-sales/ticket-sales.
 import { BusesComponent } from './administratio/buses/buses.component';
 import { ServicesTravelsComponent } from './administratio/services-travels/services-travels.component';
 import { InfoToPayComponent } from './administratio/info-to-pay/info-to-pay.component';
+import { TicketsInfoComponent } from './administratio/tickets-info/tickets-info.component';
 
 export const routes: Routes = [
     {
@@ -55,5 +56,9 @@ export const routes: Routes = [
     {
         path: 'administration/info-to-pay',
         component: InfoToPayComponent
+    },
+    {
+        path: 'administration/tickets-info',
+        component: TicketsInfoComponent
     }
 ];

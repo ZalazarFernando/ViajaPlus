@@ -1,0 +1,19 @@
+    section{
+        margin-top: 150px;
+    }
+
+    #show-information{
+        background-color: #F5DEB3;
+        border: 2px solid #DAA520;
+        border-radius: 10px;
+        text-align: center;
+        margin-left: 30%;
+        width: 40%;
+        height: 450px;
+    }
+
+    input, select{
+        border-radius: 5px;
+        margin-left: 2px;
+        margin-right: 2px;
+    }
