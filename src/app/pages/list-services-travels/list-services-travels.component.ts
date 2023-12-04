@@ -7,10 +7,10 @@ import { ServicesTravels } from '../../models/service-travel';
   selector: 'app-services-travels',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './services-travels.component.html',
-  styleUrl: './services-travels.component.css'
+  templateUrl: './list-services-travels.component.html',
+  styleUrl: './list-services-travels.component.css'
 })
-export class ServicesTravelsComponent {
+export class ListServicesTravelsComponent {
   public listaServicesTravels: ServicesTravels[] = [];
 
   constructor( private serviceTravelService: ServicesTravelsService) { }
