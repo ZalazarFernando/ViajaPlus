@@ -9,11 +9,18 @@ export interface ItinerarioRequestBody {
     IDTramoDestino: number;
   }
 
-  export interface Itinerario {
-    horaPartida: Time;
-    horaLlegada: Time;
-    CiudadOrigen: string;
-    CiudadDestino: string;
-    IDCiudadOrigen: number;
-    IDCiudadDestino: number;
+export interface Itinerario {
+	IDItinerario: number;
+	Distancia: number;
+	IDServicio: number;
+	Disponibilidad: boolean;
+	FechaPartida: string;
+	FechaLlegada: string;
+	IDTramoOrigen: string;
+	IDTramoDestino: string;
+	NombreOrigen: string;
+	NombreDestino: string;
+	CostoServicio: number;
+	IDTransporte: number;
+	CalidadServicio: string;
 }
