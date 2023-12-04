@@ -1,0 +1,33 @@
+<div class="table-container">
+
+    <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Calidad</th>
+            <th>Disponibilidad</th>
+            <th>Fecha Partida</th>
+            <th>Fecha Llegada</th>
+            <th>Hora Partida</th>
+            <th>Hora Llegada</th>
+            <th>Costo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let servicTravel of listaServicesTravels">
+            <td>{{ servicTravel.ID }}</td>
+            <td>{{ servicTravel.calidad }}</td>
+            <td>{{ servicTravel.disponibilidad }}</td>
+            <td>{{ servicTravel.fechaPartida }}</td>
+            <td>{{ servicTravel.fechaLlegada }}</td>
+            <td>{{ servicTravel.horaPartida }}</td>
+            <td>{{ servicTravel.horaLlegada }}</td>
+            <td>{{ servicTravel.Costo }}</td>
+            <td>
+              <button class="boton-servicetravels borrar" (click)="borrarServiceTravel(servicTravel)">Borrar</button>
+              <button class="boton-servicetravels comprar" (click)="hacerAlgoOtro(servicTravel)">Comprar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
