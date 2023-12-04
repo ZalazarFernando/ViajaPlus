@@ -28,7 +28,7 @@
             <td>{{ reserva.ID_Transporte }}</td> -->
             <td>{{ reserva.CiudadOrigen }}</td>
             <td>{{ reserva.CiudadDestino }}</td>
-            <td>
+            <td *ngIf="reserva.Estado != 'Vendida'">
               <button class="boton-reserva borrar" (click)="borrarReserva(reserva)">Borrar</button>
               <button class="boton-reserva comprar" (click)="hacerAlgoOtro(reserva)">Comprar</button>
             </td>
