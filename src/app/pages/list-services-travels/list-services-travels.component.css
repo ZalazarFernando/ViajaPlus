@@ -1,0 +1,54 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #e2bf4b;
+    color: rgb(0, 0, 0);
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .boton-reserva {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: .2rem;
+  }
+
+  .borrar{
+    background-color: #b62e04;
+    transition: background-color 0.3s ease;
+    color: white;
+
+  }
+
+  .comprar{
+    background-color: #007bff;
+    transition: background-color 0.3s ease;
+    color: white;
+
+  }
+  
+  .boton-reserva.comprar:hover {
+    background-color: #0056b3;
+  }
+
+  .boton-reserva.borrar:hover {
+    background-color: #f01717;
+  }
+
+  .table-container{
+    margin: 1rem;
+  }

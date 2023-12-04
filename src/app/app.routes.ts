@@ -8,7 +8,9 @@ import { TravelFindComponent } from './pages/travel-find/travel-find.component';
 import { ItineraryMaintenanceComponent } from './administratio/itinerary-maintenance/itinerary-maintenance.component';
 import { TicketSalesComponent } from './administratio/ticket-sales/ticket-sales.component';
 import { BusesComponent } from './administratio/buses/buses.component';
+import { ListBusesComponent } from './pages/list-buses/list-buses.component';
 import { ServicesTravelsComponent } from './administratio/services-travels/services-travels.component';
+import { ListServicesTravelsComponent } from './pages/list-services-travels/list-services-travels.component';
 import { InfoToPayComponent } from './administratio/info-to-pay/info-to-pay.component';
 import { TicketsInfoComponent } from './administratio/tickets-info/tickets-info.component';
 import { ReservationComponent } from './pages/reservation/reservation.component';
@@ -44,8 +46,16 @@ export const routes: Routes = [
         component: ReservationComponent
     },
     {
+        path: 'list-buses',
+        component: ListBusesComponent 
+    },
+    {
         path: 'itinerario',
         component: ItinerarioComponent
+    },
+    {
+        path: 'services-travel',
+        component: ListServicesTravelsComponent
     },
     {
         path: 'administration/itinerary-maintenance',
