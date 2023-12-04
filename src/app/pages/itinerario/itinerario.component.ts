@@ -14,14 +14,20 @@ export class ItinerarioComponent implements OnInit {
   constructor( private itinerarioService: ItinerarioService) { }
 
   ngOnInit() {
-    this.itinerarioService.getReservas().
+    this.itinerarioService.getItinerarios().
       subscribe((itinerarios: any) => {
-      this.listaItinerarios = itinerarios.itinerarios;
+        debugger
+      this.listaItinerarios = itinerarios.data;
     });
   }
 
-  hacerAlgo(itinerario: any) {
-    console.log('Hiciste clic en el botón 1 del elemento: ', itinerario);
+  borrarItinerario(itinerario: any) {
+    this.itinerarioService.deleteItinerario(itinerario.IDItinerario).
+      subscribe((itinerario: any) => {
+        console.log('elemento borrado: ', itinerario);
+        // Actualizar la lista de reservas en el front-end
+        this.listaItinerarios = this.listaItinerarios.filter(r => r.IDItinerario !== itinerario.IDItinerario);
+      });
   }
 
   hacerAlgoOtro(itinerario: any) {

@@ -12,13 +12,13 @@
         </thead>
         <tbody>
           <tr *ngFor="let itinerario of listaItinerarios">
-            <td>{{ itinerario.ID }}</td>
-            <td>{{ itinerario.horaPartida }}</td>
-            <td>{{ itinerario.horaLlegada }}</td>
-            <td>{{ itinerario.ciudadOrigen }}</td>
-            <td>{{ itinerario.ciudadDestino }}</td>
+            <td>{{ itinerario.IDItinerario }}</td>
+            <td>{{ itinerario.FechaPartida }}</td>
+            <td>{{ itinerario.FechaLlegada }}</td>
+            <td>{{ itinerario.NombreOrigen }}</td>
+            <td>{{ itinerario.NombreDestino }}</td>
             <td>
-              <button class="boton-itinerario borrar" (click)="hacerAlgo(itinerario)">Borrar</button>
+              <button class="boton-itinerario borrar" (click)="borrarItinerario(itinerario)">Borrar</button>
               <button class="boton-itinerario comprar" (click)="hacerAlgoOtro(itinerario)">Comprar</button>
             </td>
           </tr>

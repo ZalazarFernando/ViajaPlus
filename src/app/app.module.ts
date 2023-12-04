@@ -7,11 +7,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { routes } from './app.routes';
 import { ReservationComponent } from './pages/reservation/reservation.component';
+import { ItinerarioComponent } from './pages/itinerario/itinerario.component';
 @NgModule({
   declarations: [
     AppComponent,
     // otros componentes aquí
-    ReservationComponent
+    ReservationComponent,
+    ItinerarioComponent
   ],
   imports: [
     BrowserModule,
