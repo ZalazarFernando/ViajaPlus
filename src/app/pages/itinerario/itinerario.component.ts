@@ -22,8 +22,10 @@ export class ItinerarioComponent implements OnInit {
   }
 
   borrarItinerario(itinerario: any) {
+    debugger
     this.itinerarioService.deleteItinerario(itinerario.IDItinerario).
-      subscribe((itinerario: any) => {
+      subscribe((data: any) => {
+        debugger
         console.log('elemento borrado: ', itinerario);
         // Actualizar la lista de reservas en el front-end
         this.listaItinerarios = this.listaItinerarios.filter(r => r.IDItinerario !== itinerario.IDItinerario);
