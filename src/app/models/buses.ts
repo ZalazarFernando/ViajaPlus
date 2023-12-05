@@ -7,11 +7,15 @@ export interface BusesRequestBody {
     costo: number;
   }
 
-  export interface Buses {
-    nroUnidad: number;
-    tipoAtencion: string;
-    categoria: string;
-    pisos: number;
-    situacion: string;
-    costo: number;
+export interface Buses {
+  ID: number;
+  CreatedAt: string;
+  UpdatedAt: string;
+  DeletedAt: string | null;
+  NroUnidad: number;
+  Pisos: number;
+  Situacion: boolean;
+  CostoTransporte: number;
+  Categoria: string;
+  TipoAtencion: string;
 }

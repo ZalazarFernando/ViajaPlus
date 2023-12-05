@@ -1,4 +1,4 @@
-<section>
+<!-- <section>
     <div id="principal" class="info-box">
         <div id="group-one" class="group-info">
             <div id="unit-numeber" class="info-div">
@@ -96,4 +96,96 @@
             </div>
         </div>
     </div>
+</section> -->
+
+<section>
+    <div id="principal" class="info-box">
+        <div id="group-one" class="group-info">
+            <div id="unit-numeber" class="info-div">
+                <h3>Número de unidad</h3>
+                <input type="text" [(ngModel)]="numeroUnidad">
+                <!-- <div id="btn-of-unit" class="btn-modify">
+                    <button id="btn-new-unit">Nueva</button>
+                    <button id="btn-delete-unit">Borrar</button>
+                </div> -->
+            </div>
+            <div id="type-service" class="info-div">
+                <h3>Tipo de atención</h3>
+                <select [(ngModel)]="bus.TipoAtencion">
+                    <option value="común">Común</option>
+                    <option value="ejecutivo">Ejecutivo</option>
+                </select>
+                <!-- <div id="btn-of-type-service" class="btn-modify">
+                    <button class="btn-save">Guardar</button>
+                </div> -->
+            </div>
+            <div id="category" class="info-div">
+                <h3>Categoría</h3>
+                <select [(ngModel)]="bus.Categoria">
+                    <option value="común">Común</option>
+                    <option value="Semi Cama">Semicama</option>
+                    <option value="Coche Cama">Coche cama</option>
+                </select>
+                <!-- <div id="btn-of-category" class="btn-modify">   
+                    <button class="btn-save">Guardar</button>
+                </div> -->
+            </div>
+        </div>
+        <div id="group-two" class="group-info">
+            <div id="floor-count" class="info-div">
+                <h3>Pisos</h3>
+                <input 
+                    type="text" 
+                    class="info-input"
+                    [(ngModel)]="bus.Pisos">
+                <!-- <div id="btn-of-floor-count" class="btn-modify">
+                    <button 
+                        class="btn-save">Guardar</button>
+                </div> -->
+            </div>
+            <div id="condition" class="info-div">
+                <h3>Situación</h3>
+                <select [(ngModel)]="bus.Situacion">
+                    <option value="true">Disponible</option>
+                    <option value="false">No disponible</option>
+                </select>
+                <!-- <div id="btn-of-condition" class="btn-modify">
+                    <button class="btn-save">Guardar</button>
+                </div> -->
+            </div>
+            <div id="Cost" class="info-div">
+                <h3>Costo</h3>
+                <input type="text" class="info-input" [(ngModel)]="bus.CostoTransporte">
+                <!-- <div 
+                    id="btn-of-cost" 
+                    class="btn-modify">
+                    <button class="btn-save">Guardar</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <button (click)="enviarDatos()">Enviar</button>
+
 </section>
+
+    <!-- <div id="gruop-count-chairs">
+        <div id="count-chairs" class="info-box">
+            <div class="info-chairs">
+                <h3>Cantidad sillas</h3>
+                <input type="text" [(ngModel)]="NumberChairs">
+                <div id="btn-of-unit" class="btn-modify">
+                    <button id="btn-save-count-chair">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- <div id="new-number-unit" class="info-box" *ngIf="showNewNumberUnit">
+        <div class="info-chairs">
+            <h3>Nuevo número de unidad</h3>
+            <input type="text" [(ngModel)]="newNumberUnity">
+            <div id="btn-of-unit" class="btn-modify">
+                <button id="btn-save-count-chair">Guardar</button>
+                <button id="btn-cancel-unit">Cancelar</button>
+            </div>
+        </div>
+    </div> -->

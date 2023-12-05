@@ -66,7 +66,7 @@ export const routes: Routes = [
         component: TicketSalesComponent
     },
     {
-        path: 'administration/buses',
+        path: 'administration/buses/:bid',
         component: BusesComponent
     },
     {

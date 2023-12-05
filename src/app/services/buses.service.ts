@@ -16,10 +16,18 @@ export class BusesService {
   }
 
   getBuses(): Observable<Buses[]> {
-    return this.http.get<Buses[]>(`http://localhost:3000/viaje/buses`);
+    return this.http.get<Buses[]>(`http://localhost:3000/transportes`);
   }
 
   deleteBuses(busesID: number): Observable<any> {
-    return this.http.delete(`http://localhost:3000/viaje/buses/${busesID}`);
+    return this.http.delete(`http://localhost:3000/delete-transporte/${busesID}`);
+  }
+
+  getBus(busID: string): Observable<Buses> {
+    return this.http.get<Buses>(`http://localhost:3000/transporte/${busID}`);
+  }
+
+  updateBus(busID: string, data: any): Observable<Buses> {
+    return this.http.patch<Buses>(`http://localhost:3000/update-transporte/${busID}`,data);
   }
 }

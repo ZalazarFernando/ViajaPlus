@@ -13,15 +13,15 @@
         </thead>
         <tbody>
           <tr *ngFor="let buses of listaBuses">
-            <td>{{ buses.nroUnidad }}</td>
-            <td>{{ buses.tipoAtencion }}</td>
-            <td>{{ buses.categoria }}</td>
-            <td>{{ buses.pisos }}</td>
-            <td>{{ buses.situacion }}</td>
-            <td>{{ buses.costo }}</td>
+            <td>{{ buses.NroUnidad }}</td>
+            <td>{{ buses.TipoAtencion }}</td>
+            <td>{{ buses.Categoria }}</td>
+            <td>{{ buses.Pisos }}</td>
+            <td>{{ buses.Situacion }}</td>
+            <td>{{ buses.CostoTransporte }}</td>
             <td>
               <button class="boton-buses borrar" (click)="borrarBuses(buses)">Borrar</button>
-              <button class="boton-buses comprar" (click)="hacerAlgoOtro(buses)">Comprar</button>
+              <button class="boton-buses comprar" (click)="hacerAlgoOtro(buses)">Administrar</button>
             </td>
           </tr>
         </tbody>

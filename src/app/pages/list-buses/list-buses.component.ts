@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BusesService } from '../../services/buses.service';
 import { Buses } from '../../models/buses';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-buses',
@@ -13,12 +14,14 @@ import { Buses } from '../../models/buses';
 export class ListBusesComponent {
   public listaBuses: Buses[] = [];
 
-  constructor( private busesService: BusesService) { }
+  constructor(private router: Router,
+    private busesService: BusesService) { }
 
   ngOnInit() {
     this.busesService.getBuses().
-      subscribe((buses: any) => {
-      this.listaBuses = buses.buses;
+      subscribe((resp: any) => {
+        debugger
+      this.listaBuses = resp.data;
     });
   }
 
@@ -27,11 +30,11 @@ export class ListBusesComponent {
       subscribe((buses: any) => {
         console.log('elemento borrado: ', buses);
         // Actualizar la lista de buses en el front-end
-        this.listaBuses = this.listaBuses.filter(r => r.nroUnidad !== buses.ID);
+        this.listaBuses = this.listaBuses.filter(r => r.ID !== buses.message);
       });
   }
 
   hacerAlgoOtro(buses: any) {
-    console.log('Hiciste clic en el botón 2 del elemento: ', buses);
+    this.router.navigate([`./administration/buses/${buses.ID}`]);
   }
 }
