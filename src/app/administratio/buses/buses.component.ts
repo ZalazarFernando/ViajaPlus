@@ -37,7 +37,7 @@ export class BusesComponent implements OnInit {
     NroUnidad: 0,
     Pisos: 0,
     Situacion: false,
-    CostoTransporte: 0,
+    CostoTransporte: "0",
     Categoria: '',
     TipoAtencion: ''
   };
@@ -74,7 +74,7 @@ export class BusesComponent implements OnInit {
       Categoria: this.bus.Categoria,
       Pisos: this.bus.Pisos,
       Situacion: this.bus.Situacion,
-      CostoTransporte: this.bus.CostoTransporte
+      CostoTransporte: Number(this.bus.CostoTransporte)
     };
   
     this.busesService.updateBus(this.busID, datosFormulario)

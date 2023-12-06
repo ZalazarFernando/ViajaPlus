@@ -15,7 +15,7 @@ export interface Buses {
   NroUnidad: number;
   Pisos: number;
   Situacion: boolean;
-  CostoTransporte: number;
+  CostoTransporte: string;
   Categoria: string;
   TipoAtencion: string;
 }
